@@ -8,7 +8,7 @@ Projet de fin de semestre en Projet BD, Ecole Nationale Supérieure Polytechniqu
 Java, JavaFX, Hibernate, SQL.
 
 # Contributeurs 
-Tamghuo Fotsi Hartnel Kritikos : kritikostamghuo@gmail.com
-Zeufack Patric Hermann : zeufackp@gmail.com 
-TALOM Patrick Christel : patrycktalom@yahoo.com
+Tamghuo Fotsi Hartnel Kritikos : kritikostamghuo@gmail.com  
+Zeufack Patric Hermann : zeufackp@gmail.com   
+TALOM Patrick Christel : patrycktalom@yahoo.com  
 TEDONZE Nick J. : nicktedonzepo@gmail.com
