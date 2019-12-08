@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="764.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fermeapp.view.Entree_viewController">
+    <stylesheets>
+        <URL value="@entree_view.css" />
+    </stylesheets>
+   <children>
+      <GridPane layoutX="8.0" layoutY="13.0" prefHeight="294.0" prefWidth="738.0" stylesheets="@entree_view.css">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="49.0" prefWidth="141.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="506.0" minWidth="10.0" prefWidth="424.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="503.0" minWidth="10.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="12.0" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="268.0" minWidth="114.0" percentWidth="0.0" prefWidth="133.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="lbl_id_Entree" prefHeight="17.0" prefWidth="70.0" text="ID Entrée :" textAlignment="CENTER" textFill="#f5f5f5" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lbl_Quantite" text="Quantité :" textFill="#fcfcfc" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lbl_Total_Defec" prefHeight="21.0" prefWidth="137.0" text="Total Défectieux :" textFill="WHITE" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lbl_Date" text="Date :" textFill="#f8f8f8" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="70.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXDatePicker fx:id="date_Recrutement_Personnel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <JFXTextField fx:id="txt_id_Entree" stylesheets="@entree_view.css" unFocusColor="#fff9f9" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txt_Quantite" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txt_Total_Defec" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <JFXButton fx:id="btn_Enregistrer" prefHeight="40.0" prefWidth="133.0" text="Enregistrer" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <opaqueInsets>
+                  <Insets right="15.0" />
+               </opaqueInsets>
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </JFXButton>
+            <JFXButton fx:id="btn_Modifier" prefHeight="40.0" prefWidth="138.0" text="Modifier" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Tahoma Bold" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </JFXButton>
+            <JFXButton fx:id="btn_Supprimer" prefHeight="40.0" prefWidth="141.0" text="Supprimer" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btn_Ajouter" prefHeight="40.0" prefWidth="134.0" text="Ajouter" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Tahoma Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btn_Annuler" buttonType="RAISED" prefHeight="40.0" prefWidth="135.0" text="Annuler" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Tahoma Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="63.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/panier-logo-png-7.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Label fx:id="nouvelle_Entree_title" prefHeight="41.0" prefWidth="435.0" text="Nouvelle Entrée" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="21.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Separator prefWidth="200.0" GridPane.columnIndex="1">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </Separator>
+            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@images/gtk-medias-enregistrer-icone-5982-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@images/ajouter-icone-9440-48.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets top="5.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@images/supprimer-icone-4266-48.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets top="8.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@images/db-mise-a-jour-icone-7373-64.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@images/annuler-rouge--icone-9113-48.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <GridPane layoutX="14.0" layoutY="358.0" prefHeight="219.0" prefWidth="722.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView prefHeight="185.0" prefWidth="687.0" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn text="ID Entree" />
+                  <TableColumn prefWidth="143.0" text="Quantité" />
+                  <TableColumn prefWidth="124.0" text="Total Défectieux" />
+                  <TableColumn prefWidth="141.0" text="Date" />
+               </columns>
+            </TableView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

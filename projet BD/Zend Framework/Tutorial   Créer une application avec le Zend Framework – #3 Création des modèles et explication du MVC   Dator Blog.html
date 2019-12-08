@@ -1,0 +1,1745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0129)http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="fr-FR"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+<meta property="fb:admins" content="686089450">
+        <meta name="verify-v1" content="XHY2rbiypJkjJBdKNKwMHOsRjUZUIu27h3oybNxGK0M=">
+
+   
+<meta name="mbl" content="f1b5766beaca380145c10a02e3a137402607ef6f">
+	<title>Tutorial : Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC | Dator Blog</title>
+
+	<meta name="generator" content="WordPress 2.8.4"> <!-- leave this for stats -->
+
+	<link rel="stylesheet" href="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/style.css" type="text/css" media="screen">
+
+	<link rel="stylesheet" href="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/geshi.css" type="text/css">
+        <link rel="stylesheet" href="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/fancy.css" type="text/css">
+	<link rel="alternate" type="application/rss+xml" title="Dator Blog RSS Feed" href="http://feeds.feedburner.com/DatorBlog">
+
+	<link rel="pingback" href="http://www.dator.fr/xmlrpc.php">
+
+	<link rel="shortcut icon" type="image/x-png" href="http://www.dator.fr/wp-content/themes/datorblog/images/fav.png">
+
+	<link rel="stylesheet" href="http://www.dator.fr/wp-content/themes/datorblog/js/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css">
+	<script async="" type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/ca-pub-9059006487243296.js"></script><script language="javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/shCore.js" type="text/javascript"></script>
+	<script language="javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/shBrushXml.js" type="text/javascript"></script>
+	<script language="javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/shBrushPhp.js" type="text/javascript"></script>
+	<script language="javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/shBrushSql.js" type="text/javascript"></script>
+	<script language="javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/shBrushJScript.js" type="text/javascript"></script>
+	<script language="javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/shBrushCss.js" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/jquery.pack.js"></script>
+<script type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/jquery.fancybox-1.0.0.js"></script>
+
+	<script language="javascript" type="text/javascript">
+
+		$(document).ready(function(){
+
+			dp.SyntaxHighlighter.ClipboardSwf = 'js/dp.SyntaxHighlighter/Scripts/clipboard.swf';
+			dp.SyntaxHighlighter.HighlightAll('code');
+                       $('a[rel="lightbox"]').fancybox();
+		});
+
+	</script>
+
+			<link rel="stylesheet" href="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/suggest.css" type="text/css" media="screen" title="no title" charset="utf-8">
+				<script src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/suggest.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="alternate" type="application/rss+xml" title="Dator Blog » Tutorial : Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC Flux des commentaires" href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/feed/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.dator.fr/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.dator.fr/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Dator Blog" href="http://www.dator.fr/">
+<link rel="start" title="Todae Pingoo Gadget" href="http://www.dator.fr/todae-pingoo-gadget/">
+<link rel="prev" title="Une nouveauté sur Dator.fr, la page de suggestion de tutoriels !" href="http://www.dator.fr/une-nouveaute-sur-dator-fr-la-page-de-suggestion-de-tutoriels/">
+<link rel="next" title="Gritter, un plugin jQuery pour créer des notifications growl" href="http://www.dator.fr/gritter-un-plugin-jquery-pour-creer-des-notifications-growl/">
+<meta name="generator" content="WordPress 2.8.4">
+
+<!-- all in one seo pack 1.5.7 [521,664] -->
+<meta name="description" content="Dans cet épisode, nous allons essayer ensemble de comprendre le MVC et son intéret dans une application internet et nous allons créer les modèles qui vont">
+<meta name="keywords" content="htaccess,models,mvc,seo,symfony,watchmydesk,zend,zend framework,zend_db_table,tutoriels">
+<link rel="canonical" href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/">
+<!-- /all in one seo pack -->
+
+<!-- Start Of Script Generated By WP-PageNavi 2.31 -->
+<link rel="stylesheet" href="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/pagenavi-css.css" type="text/css" media="screen">
+<!-- End Of Script Generated By WP-PageNavi 2.31 -->
+
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+
+
+<body>
+
+<div id="page">
+
+	<div id="menu">
+
+		<ul class="in">
+
+			<li><a href="http://www.ziki.com/fr/dator">Ziki</a></li>
+
+			<li><a href="http://twitter.com/clementj">Twitter</a></li>
+
+			<li><a href="http://www.linkedin.com/in/clementj">LinkedIn</a></li>
+
+			<li><a href="http://www.facebook.com/profile.php?id=686089450">FaceBook</a></li>
+
+		</ul>
+
+		<ul class="pages">
+
+			<li class="page_item page-item-1"><a title="Accueil" href="http://www.dator.fr/">Accueil</a></li>
+
+			 
+
+		</ul>
+
+	</div>
+
+	<div id="header">
+
+		<div id="header_title">
+
+			<h1>Dator Blog</h1>
+
+			<span>développement &amp; life</span>
+
+			<span>Ajax, Blog, Collaboration, CSS2, Découverte, Electro, Framework, Fun, Gadget, Hébergement, Javascript, PHP, Playlist, Référencement, Site Web, Vidéos, Web 2.0, Webdesign, xHTML </span>
+
+			<a href="http://www.dator.fr/"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/datorblog.png" alt="Index"></a>
+
+		</div>
+
+<form action="http://www.dator.fr/recherche" id="cse-search-box">
+
+  <div class="search">
+
+    <input type="hidden" name="cx" value="partner-pub-9059006487243296:uhsfpz-t5nd">
+
+    <input type="hidden" name="cof" value="FORID:11">
+
+    <input type="text" name="q" size="25" class="keyword">
+
+    <div id="buttonsearch">
+
+	<input class="pictoSearch" type="image" alt="Recherche" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/transparent.gif" title="Recherche" name="sa">
+
+	</div>
+
+  </div>
+
+</form>
+
+<script type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/brand"></script>
+
+	</div>
+
+<div class="ContainerBG">
+
+ <div class="Container">
+
+<!-- Side Central START -->
+<div class="SC">
+
+
+<div class="Post">
+
+<div class="PostHead">
+ <h2 class="title"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#"></a><a title="Lien permanent vers Tutorial : Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC" href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/" rel="bookmark">Tutorial : Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC</a>
+
+&nbsp;&nbsp;<a href="http://www.additious.com/?url=http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/&title=Tutorial%20:%20Cr%C3%A9er%20une%20application%20avec%20le%20Zend%20Framework%20%E2%80%93%20#3 Création des modèles et explication du MVC" title="Promouvoir cet article en utilisant n&#39;importe quel gestionnaire de signets!" target="_blank"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/additious_bleu.gif" border="0" style="border:none;"></a>
+</h2>
+ <p class="PostDate">
+   <strong class="day">13</strong>
+   <strong class="month">juil</strong>
+ </p>
+  <p class="PostInfo">Par Clément dans <em><a href="http://www.dator.fr/category/tutoriels/" title="Voir tous les articles dans Tutoriels" rel="category tag">Tutoriels</a></em></p>
+  <p class="PostInfo">Mots-clefs&nbsp;:<a href="http://www.dator.fr/tag/htaccess/" rel="tag">htaccess</a>, <a href="http://www.dator.fr/tag/models/" rel="tag">Models</a>, <a href="http://www.dator.fr/tag/mvc/" rel="tag">MVC</a>, <a href="http://www.dator.fr/tag/seo/" rel="tag">SEO</a>, <a href="http://www.dator.fr/tag/symfony/" rel="tag">Symfony</a>, <a href="http://www.dator.fr/tag/watchmydesk/" rel="tag">Watchmydesk</a>, <a href="http://www.dator.fr/tag/zend/" rel="tag">Zend</a>, <a href="http://www.dator.fr/tag/zend-framework/" rel="tag">Zend Framework</a>, <a href="http://www.dator.fr/tag/zend_db_table/" rel="tag">Zend_Db_Table</a></p>
+</div>
+  
+<div class="PostContent">
+  <p style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-9059006487243296";
+/* 468x60, date de création 12/10/08 */
+google_ad_slot = "5774803423";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</p><p><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/creation-model-base-de-donnee.jpg" alt="creation-model-base-de-donnee" title="creation-model-base-de-donnee" width="600" height="180" class="aligncenter size-full wp-image-1340"><br>
+Dans cet épisode, nous allons essayer ensemble de comprendre le MVC et son intéret dans une application internet et nous allons créer les modèles qui vont nous permettre d’effectuer des actions sur la base de donnée de notre application WatchMyDesk.<br>
+<span id="more-1332"></span></p>
+<h3>Plan de l’épisode #3</h3>
+<ol>
+<li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc#explication-mvc">Explication du MVC</a>.</li>
+<li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc#mvc-zend-framework">Le MVC et le Zend Framework</a></li>
+<li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc#model-base-de-donnees">Créations des modèles de base de données</a>.</li>
+<li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc#conclusion">Conclusion</a>.</li>
+<li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc#notes">Notes</a>.</li>
+</ol>
+<p><a name="#explication-mvc"></a></p><a name="#explication-mvc">
+<h3>Explication du MVC</h3>
+<p>Selon Wikipédia, le MVC représente :</p>
+<p>Le <strong>Modèle-Vue-Contrôleur</strong> (en abrégé <strong>MVC</strong>, de l’anglais <span lang="en" xml:lang="en"><em>Model-View-Controller</em></span>) est une architecture et une méthode de conception qui organise l’interface homme-machine (IHM) d’une application logicielle.</p>
+<p>Bon c’est pas super explicatif comme description, donc on va faire plus simple !</p>
+<ul>
+<li>Le modèle représente la passerelle vers une table de la base de donnée. Au lieu d’exécuter des commandes SQL à la main, on va créer une classe qui va représenter cette table et va nous donner la possibilité de sélectionner des éléments,&nbsp; de mettre à jour la table, de supprimer un ou des éléments dans la table et d’ajouter des éléments dans la table.</li>
+<li>La vue permet d’afficher le résultat envoyer par le modèle et d’écouter tout les évenements que fait l’utilisateur sur votre site comme les liens, les boutons, les formulaires.</li>
+<li>Le contrôleur va mettre en relation les modèle et les vues afin de dire à la vue ce qu’elle doit afficher et dire au modèle ce qu’il doit faire.Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle et ensuite avertit la vue que les données ont changé pour qu’elle se mette à jour.</li>
+</ul>
+<p>Le MVC est une base de conception vraiment pratique tant au niveau de la programmation, mais aussi car ce code est testable facilement et on peut revenir dans le code plus facilement que si cela était uniquement fait en procédural.</p>
+</a><p><a name="#explication-mvc">Simple non?<br>
+</a><a name="#mvc-zend-framework"></a></p><a name="#mvc-zend-framework">
+<h3>Le MVC et le Zend Framework.</h3>
+</a><p><a name="#mvc-zend-framework">Le framework de la société Zend vous permet d’utiliser directement le MVC simplement et efficacement ! Comme nous l’</a><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/">avons vu dans l’épisode 1</a> et dans la structure des dossiers, nous avons le dossier avec les contrôleurs, le dossier avec les modèles et le dossier avec les vues.</p>
+<p>Avec le Zend Framework, il y a quelques conventions à suivre pour que tout cela soit opérationnel.</p>
+<p>Pour les Controleurs :</p>
+<ul>
+<li>Le contrôler est une classe PHP.</li>
+<li>Le nom du contrôleur doit être obligatoirement LeNom suivis de <strong>Controller</strong> (par exemple : IndexController).</li>
+<li>Le Contrôler doit étendre du Zend_Controller_Action.</li>
+<li>Si on se trouve dans un module différent de celui par défaut, le nom de la classe change : LeModule_LeNomController.</li>
+<li>Toutes les actions du contrôleurs (les méthodes de la classe qui vont appeler les modèles) doivent être nommé : LeNomAction (toujours avoir le suffixe Action).</li>
+</ul>
+<p>Pour les vues :</p>
+<ul>
+<li>Les vues sont triés par Controller, c’est à dire que pour un contrôleur Index, nous aurons notre vue dans le dossier monmodule/views/scripts/index/</li>
+<li>Le nom de la vue correspond au nom de l’action dans le contrôler, par exemple dans le contrôler IndexController, on a la méthode ListAction, la vue correspondante sera : monmodules/views/scripts/index/list.phtml.</li>
+<li>Nous pouvons bien évidemment choisir la vue à afficher dans le contrôleur</li>
+</ul>
+<p>Exemple Concret :</p>
+<pre class="brush: php">class IndexController extends Zend_Controller_Action{
+    public function listAction(){
+    // ici je fait une requête pour récupérer ce que je veux
+    }
+}
+</pre>
+<p>Cette action sera donc appelable à partir de cette adresse : <em>http://localhost/watchmydesk/index/list</em> .<br>
+Avec le MVC, plus besoin de réécrire les urls avec un htaccess, c’est aussi simple que ça pour avoir des adresses propre et SEO friendly dans votre application.</p>
+<p><a name="#models-base-de-donnees"></a></p><a name="#models-base-de-donnees">
+<h3>Créations des modèles de base de données</h3>
+</a><p><a name="#models-base-de-donnees">Les modèles de base de données, comme dis précédemment vont être utilisés pour accéder à une table de notre base de donnée watchmydesk que nous avons </a><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-2-preparation-de-la-base-de-donnees">créée dans l’épisode #2</a>.</p>
+<p>Comme les controleurs, les modèles sont des classes PHP qui étendent de Zend_Db_Table, ce qui leur permet d’avoir accès à des méthodes de mise à jour, suppression, sélection et d’insertion dans la base de donnée !<br>
+De plus, ce composant nous permet de gérer les associations dans la base de données.</p>
+<p>Nous allons faire un rappel rapide sur les relations que nous avons dans notre base de données: </p>
+<ul>
+<li>Un membre peut avoir plusieurs bureaux, plusieurs commentaires et plusieurs votes.</li>
+<li>Un bureau a un seul utilisateur et peut avoir plusieurs votes, plusieurs commentaires et plusieurs photos</li>
+<li>Un bureaux peut avoir plusieurs associations grâce à la table de liaison bureaux_photos. Cette table servira à prévenir si la photo lié est la principale (celle à afficher).</li>
+</ul>
+<p>Avec ce rappel fait, nous allons pouvoir commencer!</p>
+<p><strong>Le modèle Membres.php </strong></p>
+<pre class="brush: php">class Model_DbTable_Membres extends Zend_Db_Table
+{
+    protected $_name = 'membres';
+    protected $_primary = 'id';
+
+    protected $_referenceMap = array(
+        'Votes' =&gt; array(
+	        'columns'           =&gt; 'id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Votes',
+        ),
+        'Bureaux' =&gt; array(
+	        'columns'           =&gt; 'id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Bureaux',
+        ),
+        'Commentaires' =&gt; array(
+        	'columns'           =&gt; 'id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Commentaires',
+        )
+    );
+
+}
+</pre>
+<p>Oula, on se calme, ca veut dire quoi ce code là ! On va prendre sa respiration et regarder de plus près.<br>
+Comme dis précédemment, le modèle doit étendre de Zend_Db_Table. Nous lui indiquons aussi le nom de la table sur laquelle nous travaillons grâce à la variable protégée<em> $_name</em>, ici : membres. Ensuite nous lui indiquons la clef primaire de notre table grâce à la variable protégée<em> $_primary</em>, ici : <em>id</em>.</p>
+<p>Le gros morceau de code qui suit, c’est la déclaration des relations dans la base de données. C’est grâce à cela que nous retrouverons les bureaux d’un membre ou les commentaires écrit par ce membre. Comme dis précédemment, <em>un membre peut avoir plusieurs bureaux, plusieurs commentaires et plusieurs votes</em>, on a donc bien ces trois éléments. C’est grâce à cette variable protégée <em>$_referenceMap</em> que nous pouvons indiquer les relations. Ils nous suffit de mettre la clef étrangère (ici nommé columns) ainsi que la classe qui va servir de référence pour exécuter les requêtes SQL dans la table dépendante. </p>
+<p>Grâce à cette méthode, nous faisons abstraction de toutes les requêtes SQL à faire pour trouver les commentaires écrits par un des membres.</p>
+<p>Continuons l’écriture de nos modèles .<br>
+<strong>Le modèle Bureaux.php </strong></p>
+<pre class="brush: php">class Model_DbTable_Bureaux extends Zend_Db_Table
+{
+    protected $_name = 'bureaux';
+    protected $_primary = 'id';
+
+    protected $_referenceMap = array(
+    	'Membre' =&gt; array(
+    		'columns'		=&gt; 'membres_id',
+    		'refTableClass' =&gt; 'Model_DbTable_Membres'
+    	),
+    	'Commentaires' =&gt; array(
+    		'columns'		=&gt; 'id',
+    		'refTableClass' =&gt; 'Model_DbTable_Commentaires'
+    	)
+    );
+}
+</pre>
+<p><strong>Le modèle Commentaires.php </strong></p>
+<pre class="brush: php">class Model_DbTable_Commentaires extends Zend_Db_Table
+{
+    protected $_name = 'commentaires';
+    protected $_primary = 'id';
+
+    protected $_referenceMap = array(
+        'Membres' =&gt; array(
+	        'columns'           =&gt; 'membres_id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Membres',
+        ),
+        'Bureaux' =&gt; array(
+	        'columns'           =&gt; 'bureaux_id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Bureaux',
+        )
+    );
+
+}
+</pre>
+<p><strong>Le modèle Votes.php </strong></p>
+<pre class="brush: php">class Model_DbTable_Votes extends Zend_Db_Table
+{
+    protected $_name = 'votes';
+    protected $_primary = 'id';
+
+    protected $_referenceMap = array(
+        'Membres' =&gt; array(
+	        'columns'           =&gt; 'membres_id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Membres',
+        ),
+        'Bureaux' =&gt; array(
+	        'columns'           =&gt; 'bureaux_id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Bureaux',
+        )
+    );
+
+}
+</pre>
+<p><strong>Le modèle Photos.php </strong></p>
+<pre class="brush: php">class Model_DbTable_Photos extends Zend_Db_Table
+{
+    protected $_name = 'photos';
+    protected $_primary = 'id';
+
+    protected $_referenceMap = array(
+        'Bureaux' =&gt; array(
+	        'columns'           =&gt; 'id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Bureaux',
+        )
+    );
+
+}
+</pre>
+<p><strong>Le modèle BureauxPhotos.php </strong></p>
+<pre class="brush: php">class Model_DbTable_BureauxPhotos extends Zend_Db_Table
+{
+    protected $_name = 'bureaux_photos';
+    protected $_primary = 'id';
+
+    protected $_referenceMap = array(
+        'Bureaux' =&gt; array(
+	        'columns'           =&gt; 'bureaux_id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Bureaux',
+        ),
+        'Photos' =&gt; array(
+	        'columns'           =&gt; 'photos_id',
+	        'refTableClass'     =&gt; 'Model_DbTable_Photos',
+        )
+    );
+
+}
+</pre>
+<p>Vous devez vous retrouver avec cette structure :<br>
+<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/Image-1.jpg" alt="models-dbtable" title="models-dbtable" width="260" height="238" class="aligncenter size-full wp-image-1338"></p>
+<p>Voila ! Nous avons fait le gros du travail .<br>
+Nous allons voir maintenant si nos associations marche par des tests très rapides.<br>
+Il vous suffit d’ajouter plusieurs enregistrements dans votre base de données (plusieurs membres, plusieurs photos, plusieurs commentaires …).</p>
+<p>Nous allons allez dans le répertoire <em>/application/modules/frontend/controllers/</em>,  ouvrir de fichier IndexController.php et écrire cela :</p>
+<pre class="brush: php">class IndexController extends Zend_Controller_Action {
+       public function indexAction(){
+		$membres = new Model_DbTable_Membres(); // On instancie un modèle Membres.
+		$user = $membres-&gt;find(1)-&gt;current(); // On récupère le premier utilisateur.
+		Zend_Debug::dump($user-&gt;findModel_DbTable_Votes()); // On cherche les votes associés à l'utilisateur
+		Zend_Debug::dump($user-&gt;findModel_DbTable_Commentaires()); // On cherche les commentaires associés à l'utilisateur
+		$votes = new Model_DbTable_Votes();  // On instancie un modèle Votes.
+		$vote = $votes-&gt;find(1)-&gt;current(); // On récupère le premier vote.
+		Zend_Debug::dump($vote-&gt;findParentModel_DbTable_Membres()); // On cherche l'utilisateur qui à posté le commentaire
+
+		$bureaux = new Model_DbTable_Bureaux(); // On instancie un modèle Bureaux.
+		$bureau = $bureaux-&gt;find(2)-&gt;current(); // On récupère le second bureau.
+		Zend_Debug::dump($bureau-&gt;findModel_DbTable_Commentaires()); // On cherche les commentaires associés au bureau.
+		Zend_Debug::dump($bureau-&gt;findModel_DbTable_PhotosViaModel_DbTable_BureauxPhotos()); // On cherche les photos associées au bureau.
+	}
+}
+</pre>
+<p>Si tout fonctionne comme vous le souhaitez, vous avez réussis !<br>
+<a name="#conclusion"></a></p><a name="#conclusion">
+<h3>Conclusion</h3>
+<p>Dans cet épisode, vous avez vu comment fonctionne le MVC avec le Zend Framework et comment mettre en place et utiliser les modèles de base de données, ainsi que leur relations dans la base de donnée.<br>
+C’était un épisode assez intense au niveau apprentissage, et je pense qu’une bonne semaine pour se remettre ne fera pas de mal ! </p>
+</a><p><a name="#conclusion">Je vous rappel que </a><a href="http://www.dator.fr/une-nouveaute-sur-dator-fr-la-page-de-suggestion-de-tutoriels/">depuis peu</a>, vous pouvez me <a href="http://www.dator.fr/suggestions/">suggérer des articles ou des vidéos sur la page de suggestion</a>.<br>
+Bonne vacances à ceux qui en ont et à Lundi prochain !</p>
+<div class="notes">
+<a name="#notes"><p></p>
+<h3>Notes</h3>
+</a><ul><a name="#notes">
+</a><li><a name="#notes">Si vous voulez un peu plus de précisions sur les requêtes SQL à partir des modèles avec le Zend Framework, je vous conseille la </a><a href="http://framework.zend.com/manual/en/zend.db.table.html">documentation</a> à ce sujet.</li>
+<li>Malgré la longueur de cet article, il  a été rédigé en une nuit pour cause d’absence durant le weekend. Veuillez donc m’excuser si vous trouvez des erreurs de codes, fautes d’orthographes. Si vous en trouvez, n’hésitez pas à me le faire savoir dans les commentaires !</li>
+<li><a href="http://lafermeduweb.net/billet/watch-my-desk-tutorial-symfony-partie-3-mvc-et-modeles-symfony-489.html">Retrouvez la version pour Symfony sur LaFermeDuWeb</a></li>
+</ul>
+<p></p></div>
+
+
+</div>
+</div> 
+<!--
+<script src="http://feeds.feedburner.com/~s/DatorBlog?i=http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/" type="text/javascript" charset="utf-8"></script>-->
+
+
+
+<div style="text-align:center"><a href="http://www.hellotipi.com/?pp=39_4"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/4.jpg" style="border:0"></a></div>
+<div class="like-more">
+<h3>Vous avez aimé cet article ?</h3>
+<p>
+	<script type="text/javascript">
+	tweetmeme_style = 'compact';
+	</script>
+	<script type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/button.js"></script>
+	<div class="fb-share-button fb_iframe_widget" data-href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/" data-type="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=22af46f1a4e342a3095288fc5e23ba0a&amp;container_width=680&amp;href=http%3A%2F%2Fwww.dator.fr%2Ftutorial-creer-une-application-avec-le-zend-framework-%25e2%2580%2593-3-creation-des-modeles-et-explication-du-mvc%2F&amp;locale=en_US&amp;sdk=joey&amp;type=button_count"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f22e542f3c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/saved_resource.html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></div> 
+	<script src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/FB.Share" type="text/javascript"></script>
+<a href="http://feeds.feedburner.com/DatorBlog">
+<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/feed_32.png">
+</a> 
+<a href="http://www.netvibes.com/subscribe.php?url=http://feeds.feedburner.com/DatorBlog">
+<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/netvibes_32.png">
+</a> 
+<a href="http://www.facebook.com/sharer.php?u=http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/">
+<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/facebook_32.png">
+</a> 
+<a href="http://del.icio.us/post?url=http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/">
+<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/delicious_32.png">
+</a> 
+<a href="http://twitthis.com/twit?url=http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-3-creation-des-modeles-et-explication-du-mvc/">
+<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/twitter_32.png">
+</a> 
+<a href="http://technorati.com/faves?add=http://www.dator.fr">
+<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/technorati_32.png">
+</a> 
+</p>
+</div>
+
+<p><small>« <a href="http://www.dator.fr/une-nouveaute-sur-dator-fr-la-page-de-suggestion-de-tutoriels/">Une nouveauté sur Dator.fr, la page de suggestion de tutoriels !</a> | <a href="http://www.dator.fr/gritter-un-plugin-jquery-pour-creer-des-notifications-growl/">Gritter, un plugin jQuery pour créer des notifications growl</a> »</small></p>
+<h3>Regarder la vidéo</h3>
+<center><script type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/banniereflux.php"></script></center>
+
+<h3>Je vous recommande aussi la lecture des sujets suivants</h3><ul class="related_post"><li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-2-preparation-de-la-base-de-donnees/" title="Tutorial : Créer une application avec le Zend Framework – #2 Préparation de la base de données">Tutorial : Créer une application avec le Zend Framework – #2 Préparation de la base de données</a></li><li><a href="http://www.dator.fr/episode-07-integration-du-design/" title="Tutorial : Créer une application avec le Zend Framework – #7 Intégration du design de WatchMyDesk">Tutorial : Créer une application avec le Zend Framework – #7 Intégration du design de WatchMyDesk</a></li><li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-5-le-layout-les-vues-et-les-helpers/" title="Tutorial : Créer une application avec le Zend Framework – #5 Le layout, les vues et les helpers">Tutorial : Créer une application avec le Zend Framework – #5 Le layout, les vues et les helpers</a></li><li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%e2%80%93-4-explications-sur-les-controleurs-et-sur-le-routing/" title="Tutorial : Créer une application avec le Zend Framework – #4 Explications sur les contrôleurs et sur le Routing">Tutorial : Créer une application avec le Zend Framework – #4 Explications sur les contrôleurs et sur le Routing</a></li><li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/" title="Tutorial : Créer une application avec le Zend Framework – #1 Préparation de l’environnement de WatchMyDesk">Tutorial : Créer une application avec le Zend Framework – #1 Préparation de l’environnement de WatchMyDesk</a></li></ul>
+<div class="Comments">
+
+<div class="List">
+
+<!-- Start CommentsList-->
+
+
+
+<h3 id="trackbacks">Un trackback</h3> 
+<ol class="trackbacklist">
+			<li class="alt" altid="comment-10231"><a href="http://aurelien.piat.free.fr/?p=864" rel="external nofollow" class="url">Les 10 meilleurs pratiques de codage pour une lisibilite optimale, une maintenance facilitee et un projet perenne (Php/MySql) « www.aurelienpiat.fr</a></li>
+			</ol>
+
+<h3 id="comments">46 commentaires</h3>
+
+
+<ol>
+
+
+	
+ <li class=" " id="comment-7246">
+
+ <p class="ListUser"><strong>David</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7246&quot;, &quot;David&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7246" title="">
+
+13 juillet 2009 à 11:11</a></p>
+ <span class="ListNr">1</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar.php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Salut,</p>
+<p>Je pense qu’il est inutile de mettre les $_referenceMap dans les modeles Membres.php et Photos.php. Quant à Bureaux.php seul la référence ‘Membres’ suffit.</p>
+<p>Me semble-t-il !!</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7247">
+
+ <p class="ListUser"><strong>Rabbits</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7247&quot;, &quot;Rabbits&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7247" title="">
+
+13 juillet 2009 à 12:23</a></p>
+ <span class="ListNr">2</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(1).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Très bon ensemble d’articles, vivement  la suite !!!!</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7250">
+
+ <p class="ListUser"><strong><a href="http://www.pierregaste.fr/" rel="external nofollow" class="url">Pierre</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7250&quot;, &quot;Pierre&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7250" title="">
+
+13 juillet 2009 à 19:51</a></p>
+ <span class="ListNr">3</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(2).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7246" rel="nofollow">David</a>: Pourquoi enlever le reference_map sur Membre.php ? Il peut servir à lister tous les commentaires du membre par exemple non ?</p>
+<p>Je précise que je débute avec Zend, et je me pose pas mal de questions <img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/icon_wink.gif" alt=";)" class="wp-smiley"> </p>
+<p>En tout cas, vivement lundi prochain ! <img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/icon_wink.gif" alt=";)" class="wp-smiley">  Vraiment très bon cette série de tuto!</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7251">
+
+ <p class="ListUser"><strong>David</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7251&quot;, &quot;David&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7251" title="">
+
+13 juillet 2009 à 21:47</a></p>
+ <span class="ListNr">4</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar.php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7250" rel="nofollow">Pierre</a>: Non<br>
+Dans ce cas ta référence est déjà faite dans Commentaires.php<br>
+Mais j’avoue j’ai pas testé.</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7252">
+
+ <p class="ListUser"><strong><a href="http://www.pierregaste.fr/" rel="external nofollow" class="url">Pierre</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7252&quot;, &quot;Pierre&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7252" title="">
+
+13 juillet 2009 à 22:06</a></p>
+ <span class="ListNr">5</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(2).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Effectivement, je n’avais pas étudié le code du contrôleur en détail :$</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7253">
+
+ <p class="ListUser"><strong>Jad</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7253&quot;, &quot;Jad&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7253" title="">
+
+13 juillet 2009 à 22:35</a></p>
+ <span class="ListNr">6</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(3).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Merci déjà pour les tutos…<br>
+sauf que j’ai un seul problème :</p>
+<p>Fatal error: Call to a member function findModel_DbTable_Albums() on a non-object in E:\WebServers\wamp\www\ForTest\application\controllers\IndexController.php on line 16</p>
+<p>voila mon code :<br>
+public function indexAction() {<br>
+        $artistes = new Model_DbTable_Artistes();<br>
+        $albums = $artistes-&gt;find(1)-&gt;current();<br>
+        Zend_Debug::dump($albums-&gt;findModel_DbTable_Albums());<br>
+    }</p>
+<p>N.B: j’ai deux modéle (Artistes et Albums)…</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7254">
+
+ <p class="ListUser"><strong>David</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7254&quot;, &quot;David&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7254" title="">
+
+13 juillet 2009 à 23:03</a></p>
+ <span class="ListNr">7</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar.php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bon je viens de tester.<br>
+Je confirme ce que j’affirme.<br>
+Inutile de mettre $_referenceMap dans le modeles Membres.php.<br>
+Pour Photos.php, il faut évidemment laisser la référence au bureau, mais il faut remplacer id par bureaux_id.<br>
+Quant à Bureaux.php seul la référence ‘Membres’ suffit.</p>
+<p>Pour que ça marche il faut aussi remplacer membre_id par membres_id, bureau_id par bureaux_id et photo_id par photos_id.<br>
+Voilà là je crois que c’est bon.</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7255">
+
+ <p class="ListUser"><strong>David</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7255&quot;, &quot;David&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7255" title="">
+
+13 juillet 2009 à 23:04</a></p>
+ <span class="ListNr">8</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar.php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7253" rel="nofollow">Jad</a>: Tu ne dois pas avoir d’enregistrement avec id=1 dans ta table «&nbsp;artistes»&nbsp;</p>
+ 
+	 	
+
+</div></li>
+
+ <li class="comment-author " id="comment-7256">
+
+ <p class="ListUser"><strong><a href="http://www.dator.fr/" rel="external nofollow" class="url">Clément</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7256&quot;, &quot;Clément&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7256" title="">
+
+14 juillet 2009 à 10:40</a></p>
+ <span class="ListNr">9</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(4).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7254" rel="nofollow">David</a>: Pourquoi par bureaux_id sachant que dans la base de données on a juste bureau_id comme primary key .</p>
+<p>En effet, le referenceMap de User n’ai pas obligatoire, néanmoins, je préfère le laisser pour montrer que même si on a des liaisons «&nbsp;en trop»&nbsp;, l’application continue de fonctionner.</p>
+<p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7253" rel="nofollow">Jad</a>: Tu ne doit pas avoir d’enregistrement dans ta table.</p>
+<p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7247" rel="nofollow">Rabbits</a>: Merci beaucoup !</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7257">
+
+ <p class="ListUser"><strong>David</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7257&quot;, &quot;David&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7257" title="">
+
+14 juillet 2009 à 11:30</a></p>
+ <span class="ListNr">10</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar.php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7256" rel="nofollow">Clément</a>: car tu as renseigner bureaux_id comme champs dans ta table photos et pas bureau_id et idem pour les autres tables.<br>
+J’ai testé ton appli telle quelle et ça ne marchait pas, avec ces modifs ça marche.</p>
+ 
+	 	
+
+</div></li>
+
+ <li class="comment-author " id="comment-7259">
+
+ <p class="ListUser"><strong><a href="http://www.dator.fr/" rel="external nofollow" class="url">Clément</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7259&quot;, &quot;Clément&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7259" title="">
+
+14 juillet 2009 à 12:10</a></p>
+ <span class="ListNr">11</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(4).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7257" rel="nofollow">David</a>: En effet, toutes mes excuses, article mis a jour !</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7260">
+
+ <p class="ListUser"><strong>David</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7260&quot;, &quot;David&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7260" title="">
+
+14 juillet 2009 à 13:39</a></p>
+ <span class="ListNr">12</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar.php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7259" rel="nofollow">Clément</a>: Je t’en prie c’est comme ça qu’on progresse tous</p>
+ 
+	 	
+
+</div></li>
+
+ <li class="comment-author " id="comment-7263">
+
+ <p class="ListUser"><strong><a href="http://www.dator.fr/" rel="external nofollow" class="url">Clément</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7263&quot;, &quot;Clément&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7263" title="">
+
+14 juillet 2009 à 16:19</a></p>
+ <span class="ListNr">13</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(4).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7260" rel="nofollow">David</a>: De plus c’est une erreur bête, je n’était pas partie sur la bonne base de donnée (la même que celle donnée dans l’épisode 2) ^^</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7265">
+
+ <p class="ListUser"><strong>yveson33</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7265&quot;, &quot;yveson33&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7265" title="">
+
+15 juillet 2009 à 8:02</a></p>
+ <span class="ListNr">14</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(5).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>effectivement j’aimerais juste une cofirmation de pro  mais $_referenceMap  n’est pas obligatoire dans le  cas d’une base INNODB (gestion du cascading par le moteur bd) pareille pour le $_id du moment que dans la base les cles primaires soit «&nbsp;id»&nbsp;</p>
+ 
+	 	
+
+</div></li>
+
+ <li class="comment-author " id="comment-7266">
+
+ <p class="ListUser"><strong><a href="http://www.dator.fr/" rel="external nofollow" class="url">Clément</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7266&quot;, &quot;Clément&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7266" title="">
+
+15 juillet 2009 à 8:10</a></p>
+ <span class="ListNr">15</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(4).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7265" rel="nofollow">yveson33</a>: Pour innodb je ne sais pas trop mais dans tout les cas je préfère vous montrer les propriété d’un objet qui étend de Zend_Db_Table pour ne pas être perdu si vous avez un projet avec des relations et une primary key autre que «&nbsp;id»&nbsp;.</p>
+<p>A bientôt <img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7269">
+
+ <p class="ListUser"><strong>phifeshaheed</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7269&quot;, &quot;phifeshaheed&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7269" title="">
+
+16 juillet 2009 à 20:10</a></p>
+ <span class="ListNr">16</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(6).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>je trouve assez périlleux de ne faire que des classés models et aucune classes métiers parce que cela voudra dire qu’une bonen partie d eta logique métier sera incluses dans les classes models ce qui n’est pas une tres bonne chance en MVC</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7270">
+
+ <p class="ListUser"><strong>phifeshaheed</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7270&quot;, &quot;phifeshaheed&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7270" title="">
+
+16 juillet 2009 à 20:15</a></p>
+ <span class="ListNr">17</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(6).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>à ta place j’aurai d’abord fait des classes models qui étendent zend_db_table_abstract que j’aurai placé dans un sous rep de models appelés  DbTable et ensuite j’aurai des classes métiers et mappers dans le rep models</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7273">
+
+ <p class="ListUser"><strong>phifeshaheed</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7273&quot;, &quot;phifeshaheed&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7273" title="">
+
+17 juillet 2009 à 9:22</a></p>
+ <span class="ListNr">18</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(6).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Explication plus détaillée!!!</p>
+<p>Le fichier UneTable.php, contenant Default_Model_DbTable_UneTable extends Zend_Db_Table_Abstract, et se trouvant dans /models/DbTable, est celui qui fait le lien direct avec la base de données : tu y indiques par des attributs protected le nom de la table, la clé primaire, les dépendances, etc.</p>
+<p>Le fichier UneTable.php contenant Default_Model_UneTable, se trouvant dans /models, est ce qui s’apparente à un Bean en Java, c’est à dire ton objet entité avec ses attributs, ses getters et ses setters. Tu peux également y définir d’autres méthodes, par exemple dans le tutoriel Quickstart ils définissent entre autres la méthode save(). Cette méthode contient un appel au Mapper de ta classe bean.</p>
+<p>Ton Default_Model_UneTableMapper, dans le repertoire /models aussi, contient le corps des fonctions que tu définis dans ton bean : le bean, dans la méthode save(), fait un appel au Mapper, et c’est le mapper qui va se charger d’effectuer la requete, en définissant la méthode save() de manière précise</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7274">
+
+ <p class="ListUser"><strong><a href="http://www.nicollet.net/" rel="external nofollow" class="url">Victor Nicollet</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7274&quot;, &quot;Victor Nicollet&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7274" title="">
+
+17 juillet 2009 à 14:10</a></p>
+ <span class="ListNr">19</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(7).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7273" rel="nofollow">phifeshaheed</a>: la question d’utiliser une couche M épaisse ou fine est une vraie décision à prendre, chacune des alternatives ayant ses propres avantages et désavantages.</p>
+<p>Les avantages d’une couche M épaisse sont que les règles métier qu’on peut introduire dans le système sont beaucoup plus riches et étoffées car elles apparaissent directement dans le code PHP, et ne sont pas restreintes aux seules contraintes et relations SQL: droits, contraintes exotiques, mise en cache… </p>
+<p>Les avantages d’une couche M fine sont d’un côté que la base est la seule référence (donc pas de risque qu’elle soit corrompue depuis l’extérieur : toutes les contraintes sont garanties par le SQL) et de l’autre que le développement de nouvelles opérations est plus facile car ne nécessite pas de code intermédiaire au niveau de la couche métier. </p>
+<p>Suivant la taille du projet, la vitesse de développement (couche fine) ou la complexité des règles (couche épaisse) peuvent l’emporter. Pour un tutoriel, en particulier, je pense que la couche fine telle qu’utilisée est plus appropriée. Sans tomber dans le syndrome Digitalus <img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/icon_wink.gif" alt=";)" class="wp-smiley"> </p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7275">
+
+ <p class="ListUser"><strong>phifeshaheed</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7275&quot;, &quot;phifeshaheed&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7275" title="">
+
+17 juillet 2009 à 16:19</a></p>
+ <span class="ListNr">20</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(6).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@Victor tout à fait d’accord, mais tu remarqueras que dans le tutoriel officiel de ZF, on utilise un bazouka pour tuer une mouche i.e. un mapper, couche métier plus une couche de persistance alors qu’on a une seule table… on se demande pourquoi? </p>
+<p>La raison: Perso je crois que meme si ZF n’aime pas imposer mais proposer, ils aiment au moins proposer de bonnes pratiques et je pense que malgré toutes les considérations légitimes que tu introduit, séparer la business logic de la classe de persistance est une tres tres bonne pratique</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7276">
+
+ <p class="ListUser"><strong>phifeshaheed</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7276&quot;, &quot;phifeshaheed&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7276" title="">
+
+17 juillet 2009 à 16:26</a></p>
+ <span class="ListNr">21</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(6).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>etant par essence agnostic en matiere de techno, méthodo ou archi, je ne peux que souscrire à 100% avec ceci: «&nbsp;Suivant la taille du projet, la vitesse de développement (couche fine) ou la complexité des règles (couche épaisse) peuvent l’emporter.»&nbsp;</p>
+<p>au passage comme dans tous les tutoriels, c’est en général sur l’archi du model que les gros débats en lieu dans les comments… ZF laisse tellement de liberté que ça devient tres difficile de choisir… au passage pour les transfuges comem moi de Symfony, il est assez aisé vu que ZF est souple de virer zenddb et de bouffer du Zf à la sauce doctrine… taper zf et doctrine chez googlme il vous donnera l’adresse d’un bon tuto à ce sujet… souvent ecrits pour 1.7 et précédents donc un peu d’adaptation ets nécessaire</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7290">
+
+ <p class="ListUser"><strong>phifeshaheed</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7290&quot;, &quot;phifeshaheed&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7290" title="">
+
+26 juillet 2009 à 19:42</a></p>
+ <span class="ListNr">22</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(6).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour,</p>
+<p>je dois réoudre un probleme sur une application que je dois coder sous zend framework, une application en apparence il s’agit essentiellement de faire de la saisie de données afin de générer des statistiques. Et donc pour cela on a différentes tables qui sont reliées en général à un formulaire qui va récolter les informations nécessaire pour les insérer dans cette table.</p>
+<p>Le petit piège sur ce projet c’est que les utilisateurs finaux souhaitent pouvoir ajouter des champs dans les différents formulaires si ils ressentent le besoin de récolter nouveaux types d’informations. Exemple tout bete: on récolte les informations sur les employés de l’entreprise à travers un formulaire qui comporte un champ téléphone fixe et il s’avert qu’on veuille ajouter un champ téléphone mobile. Jusque là so far so good, cependant afin de sauvegarder cette nouvelle info en base de données, typiquement on va devoir ajouter une nouvelle colonne dans la table Employée de notre base…</p>
+<p>L’application étant développée avec zend framework, c’ets donc là que se pose la tuile car on vient de modifier le modèle de données et donc il faut régénérer le modèle via doctrine ou propel ou la main sous zendDB. Il n’est évidemment pas question de livrer au client une appli sur laquelle il va devoir faire des lignes de commande pour générer des classes du modèle de données.</p>
+<p>ma question: Comment structurer ma base de données pour que je puisse faire les modifications attendues par mon client sans passer passer par l’ajout d’une nouvelle colonne et donc une modification du modèle de données nécessitant une régénération des classes du model?</p>
+<p>Exemple de tables: Produits (prix, description, nom), Magasins(adresse, type)<br>
+exemples formulaire: saisie info produits, saisie info magasin<br>
+Exemple modification: on veut pouvoir saisir et enregistrer en base le nom du fabriquant du produit, et l’on voudrai pouvoir saisir et enregistrer en base le nom du gérant du magasin. Comment pourrai t on structuré la base de donnée pour qu’elle puisse sous zend framework permettre ce type d’opération: ajout de champ formulaire et possibilité d’enregistrer les nouvelles saisies sans modifier la structure de la BDD?</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7296">
+
+ <p class="ListUser"><strong>Phabi1</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7296&quot;, &quot;Phabi1&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7296" title="">
+
+1 août 2009 à 10:57</a></p>
+ <span class="ListNr">23</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(8).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour,<br>
+Je débute sous Zend 1.8.<br>
+Je souhaiterai faire un model dans un module particulier pour le récupérer pour d’autre application mais je trouve aucume documentation la dessus.<br>
+Mon architecture est celle ci : Application&gt;modules&gt;myModule&gt;models&gt;DbTable&gt;myTable.php<br>
+Mais il me remontre comme erreur Class ‘Model_DbTable_myTable’ not found.<br>
+Si quelqu’un aurait une idée, je suis preneur.<br>
+Merci</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7314">
+
+ <p class="ListUser"><strong><a href="http://leknoppix.fr/" rel="external nofollow" class="url">leknoppix</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7314&quot;, &quot;leknoppix&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7314" title="">
+
+10 août 2009 à 10:56</a></p>
+ <span class="ListNr">24</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(9).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Chez moi, malgré que je lai refaire 4 fois de A à Z, rien ne marche, malgré un enregistrement dans la base de donnée, rien ne s’affiche.</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7315">
+
+ <p class="ListUser"><strong><a href="http://leknoppix.fr/" rel="external nofollow" class="url">leknoppix</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7315&quot;, &quot;leknoppix&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7315" title="">
+
+10 août 2009 à 13:21</a></p>
+ <span class="ListNr">25</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(9).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Désolé sa marche, problème de cache sur mon navigateur web.</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7361">
+
+ <p class="ListUser"><strong>Psykotik</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7361&quot;, &quot;Psykotik&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7361" title="">
+
+21 août 2009 à 16:45</a></p>
+ <span class="ListNr">26</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(10).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour à tous, </p>
+<p>J’ai fais les 2 premiers tuto avec beaucoup de difficulté (Je ne sais d’ailleur toujours pas si j’ai réussi).</p>
+<p>Le premier :</p>
+<p>J’ai du envoyer mon travail à Clément qui m’a indiqué qu’une balise PHP ne devait pas se trouver dans un fichier brute. J’ai donc réussi a avoir la phrase mais en allant sur le dossier public.<br>
+Premier tuto reussi</p>
+<p>Le deuxième :</p>
+<p>Une fois le tuto fini, une erreur est survenue en me disant qu’il ne trouvait pas «&nbsp;Zend_Controller_Action»&nbsp; j’ai donc cherché mon erreur et j’ai fini par la trouver, ce qui ma valu un affichage de ce type :</p>
+<p>object(Zend_Db_Table_Rowset)#72 (10) { ["_data":protected]=&gt; array(0) { } ["_table":protected]=&gt; object(Model_DbTable_Bureaux)#48 (18) { ["_name":protected]=&gt; string(7) « bureaux»  ["_definition":protected]=&gt; NULL ["_definitionConfigName":protected]=&gt; NULL ["_db":protected]=&gt; object(Zend_Db_Adapter_Mysqli)#20 (12) { ["_numericDataTypes":protected]=&gt; array(16) { [0]=&gt; int(0) [1]=&gt; int(1) [2]=&gt; int(2) ["INT"]=&gt; int(0)</p>
+<p>Pour moi ce code me parrait quand meme bisar sachant que dans le tuto Clément nous dis que nous devons trouver un grand tableau sans rien dedans. Je pensais avoir fini le tuto donc je suis passé au 3éme.</p>
+<p>Le troisième : </p>
+<p>Une fois le tuto fini, j’ouvre le projet et je click sur public: et la rien ne se passe, un page blanche. j’essaye de naviguer vers les autre fichier PHP mais les erreurs sont toujours présente : </p>
+<p>Fatal error: Class ‘Zend_Controller_Action’ not found in C:\wamp\www\watchmydesk\application\modules\frontend\controllers\IndexController.php on line 2</p>
+<p>Fatal error: Class ‘Zend_Db_Table’ not found in C:\wamp\www\watchmydesk\application\models\DbTable\BureauxPhotos.php on line 3</p>
+<p>je suis persuadé que le chemin de la library n’est pas bon, aidez moi s’il vous plait</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7652">
+
+ <p class="ListUser"><strong>Tientoune</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7652&quot;, &quot;Tientoune&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7652" title="">
+
+16 septembre 2009 à 9:45</a></p>
+ <span class="ListNr">27</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(11).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour jai un probleme sur ce tuto<br>
+jai une erreur qui affiche</p>
+<p>An error occurred<br>
+Application error</p>
+ 
+	 	
+
+</div></li>
+
+ <li class="comment-author " id="comment-7657">
+
+ <p class="ListUser"><strong><a href="http://www.dator.fr/" rel="external nofollow" class="url">Clément</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7657&quot;, &quot;Clément&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7657" title="">
+
+16 septembre 2009 à 10:02</a></p>
+ <span class="ListNr">28</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(4).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7361" rel="nofollow">Psykotik</a>: En effet, le chemin vers le dossier library ne doit pas être le bon. Peux-tu me montrer le code qui indique le chemin de library dans ton index.php ?</p>
+<p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7652" rel="nofollow">Tientoune</a>: tu es sur quelle page quand tu obtiens cette erreur ? <img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7663">
+
+ <p class="ListUser"><strong>Tientoune</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7663&quot;, &quot;Tientoune&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7663" title="">
+
+16 septembre 2009 à 10:51</a></p>
+ <span class="ListNr">29</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(11).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour ^^<br>
+sur la page localhost:8888/../public</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7664">
+
+ <p class="ListUser"><strong>Tientoune</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7664&quot;, &quot;Tientoune&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7664" title="">
+
+16 septembre 2009 à 10:52</a></p>
+ <span class="ListNr">30</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(11).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour ^^<br>
+sur la page localhost:8888/../public<br>
+@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7657" rel="nofollow">Clément</a>: @<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7657" rel="nofollow">Clément</a>: @<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7657" rel="nofollow">Clément</a>:</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7665">
+
+ <p class="ListUser"><strong>Tientoune</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7665&quot;, &quot;Tientoune&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7665" title="">
+
+16 septembre 2009 à 10:54</a></p>
+ <span class="ListNr">31</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(11).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7657" rel="nofollow">Clément</a>: desoler 1ere fois que je fais un reply Sorry du doublons !!</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-7666">
+
+ <p class="ListUser"><strong>Tientoune</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;7666&quot;, &quot;Tientoune&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7666" title="">
+
+16 septembre 2009 à 10:56</a></p>
+ <span class="ListNr">32</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(11).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>@<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-7657" rel="nofollow">Clément</a>: puis aussi j’oublier</p>
+<p>jai eu la meme erreur avec le tuto n°2, mais lorsque jai retirer le fetchall dans le var_dump, le tableau affiche bien!</p>
+<p>voila x)</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-9882">
+
+ <p class="ListUser"><strong>Bruno</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;9882&quot;, &quot;Bruno&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-9882" title="">
+
+6 décembre 2009 à 10:49</a></p>
+ <span class="ListNr">33</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(12).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bravo pour ce tuto et bonnes discutions avec phifeshaheed.<br>
+J’ai 1 question :<br>
+- Existe-t-il avec zend studio un moyen de générer les classes models à partir d’une description sql ou yaml comme avec Symfony et propel.</p>
+<p>Avez-vous des liens à ce sujet ? </p>
+<p>Pour phifeshaheed, la solution de la «&nbsp;colonne dynamique»&nbsp; passe par un model (ou meta model) qui stockera ces nouvelles données en ligne. La view ira lire ce model pour connaitre le type d’information à restituer puis ira dans une autre table ou seront stockés les valeurs.<br>
+En gros, il y aura un table «&nbsp;model+»&nbsp; définissant les nouvelles informations  (key) à prendre en compte pour les clients et une table «&nbsp;donnée+»&nbsp; qui stockera pour chaque clients les valeurs (value) autrement dit il y aura autant de lignes par client (idclient, key,value) qu’il y a de nouvelles informations  .</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-9967">
+
+ <p class="ListUser"><strong><a href="http://www.ourrarhi.com/" rel="external nofollow" class="url">el mahdi</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;9967&quot;, &quot;el mahdi&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-9967" title="">
+
+25 décembre 2009 à 15:57</a></p>
+ <span class="ListNr">34</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(13).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour,<br>
+Pour mois j’ai une erreur:<br>
+Fatal error: Call to a member function findModel_DbTable_Votes() on a non-object in C:\wamp\www\watchmydesk\application\modules\frontend\controllers\IndexController.php on line 6</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-9969">
+
+ <p class="ListUser"><strong>Peter</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;9969&quot;, &quot;Peter&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-9969" title="">
+
+28 décembre 2009 à 17:48</a></p>
+ <span class="ListNr">35</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(14).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour,<br>
+      Pour mois j’ai une erreur:<br>
+      Fatal error: Call to a member function findModel_DbTable_Votes() on a non-object in C:\wamp\www\watchmydesk\application\modules\frontend\controllers\IndexController.php on line 6</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-9989">
+
+ <p class="ListUser"><strong>hicham</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;9989&quot;, &quot;hicham&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-9989" title="">
+
+6 janvier 2010 à 15:44</a></p>
+ <span class="ListNr">36</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(15).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour;<br>
+j’ai suivi bien le tuto, c’est magnifique. Alors moi j’ai utilisé la dernière version de ZF 1.9.6.<br>
+j’ai utilsé xampp pour cette application. j’ai mis le dossier frameworks dans le dossier xampplite et le dossier de l’application watchmydesk dans le dossier  xampplite/htdocs . est ce que ca marche comme ça?</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10044">
+
+ <p class="ListUser"><strong>FredT</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10044&quot;, &quot;FredT&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10044" title="">
+
+27 février 2010 à 18:11</a></p>
+ <span class="ListNr">37</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(16).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Salut,<br>
+C’est méchamment gourmand les méthodes findModel_DbTable_xxx!!!<br>
+J’ai mis en place le Zend_Db_Profiler_Firebug, et à chaque appel à ces méthodes y’a une nouvelle requete DESCRIBE tablexxx lancée !</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10074">
+
+ <p class="ListUser"><strong><a href="http://www.toocities.com/" rel="external nofollow" class="url">crowmosta</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10074&quot;, &quot;crowmosta&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10074" title="">
+
+18 avril 2010 à 1:13</a></p>
+ <span class="ListNr">38</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(17).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>No comment. Excelent tuto avec de très bon exemples.<br>
+En fouillant la doc j’ai pu ajouter des filtre avec «&nbsp;$select»&nbsp;</p>
+<p>Merci</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10088">
+
+ <p class="ListUser"><strong>Titice</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10088&quot;, &quot;Titice&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10088" title="">
+
+4 mai 2010 à 3:07</a></p>
+ <span class="ListNr">39</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(18).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Au secours!!!<br>
+J’ai la même erreur que Psykotik (Msg 26).</p>
+<p>Quelqu’un aurait-il trouvé la solution?</p>
+<p>Merci par avance.</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10102">
+
+ <p class="ListUser"><strong>fscan</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10102&quot;, &quot;fscan&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10102" title="">
+
+30 mai 2010 à 17:45</a></p>
+ <span class="ListNr">40</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(19).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Je suis nouveau sur zend.<br>
+Apres avoir appliqué ligne apres ligne ton tuto, je me retrouve avec une page :</p>
+<p>Montre ton bureau de geek</p>
+<p>Watch my desk est un site o� vous pouvez partager, explorer et noter des photos du bureaux et ordinateurs du monde entier</p>
+<p>Inscrivez vous pour partager vos bureaux, poster des coms… en 2 clics !</p>
+<p>Vous �tes sur mon site<br>
+object(Zend_Db_Table_Rowset)#78 (10) {<br>
+  ["_data":protected] =&gt; array(1) {<br>
+    [0] =&gt; array(4) {<br>
+      ["id"] =&gt; int(2)<br>
+      ["membres_id"] =&gt; int(1)<br>
+      ["bureaux_id"] =&gt; int(2)<br>
+      ["note"] =&gt; int(5)<br>
+    }</p>
+<p>[....]</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10255">
+
+ <p class="ListUser"><strong>Nicolas</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10255&quot;, &quot;Nicolas&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10255" title="">
+
+1 août 2011 à 9:32</a></p>
+ <span class="ListNr">41</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(20).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour à tous,</p>
+<p>Même problème aussi que Psykotik, et je calle… avez-vous la sollution ?</p>
+<p>Suite à l’étape 2, j’ai :</p>
+<p>vous etes sur mon site</p>
+<p>object(Zend_Db_Table_Rowset)[65]<br>
+  protected ‘_data’ =&gt;<br>
+    array<br>
+      empty<br>
+  protected ‘_table’ =&gt;<br>
+    object(Model_DbTable_Bureaux)[51]<br>
+      protected ‘_name’ =&gt; string ‘bureaux’ (length=7)<br>
+      protected ‘_definition’ =&gt; null<br>
+      protected ‘_definitionConfigName’ =&gt; null<br>
+      protected ‘_db’ =&gt;<br>
+        object(Zend_Db_Adapter_Pdo_Mysql)[21]<br>
+          protected ‘_pdoType’ =&gt; string ‘mysql’ (length=5)<br>
+          protected ‘_numericDataTypes’ =&gt;<br>
+            array<br>
+              …</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10277">
+
+ <p class="ListUser"><strong>didine</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10277&quot;, &quot;didine&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10277" title="">
+
+17 janvier 2012 à 12:06</a></p>
+ <span class="ListNr">42</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(21).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour,<br>
+vous ne mettez pas de code dans la page index.phtml???<br>
+En appliquant le tutoriel, je me retrouve aussi avec une page blanche. =(</p>
+<p>Merci pour la réponse</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10295">
+
+ <p class="ListUser"><strong>gérot</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10295&quot;, &quot;gérot&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10295" title="">
+
+22 mai 2012 à 15:27</a></p>
+ <span class="ListNr">43</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(22).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour,<br>
+J’ai aussi l’erreur suivante :<br>
+Fatal error : Call to a member function findParentApplication_Model_DbTable_Membres() on a non-object in /Applications/MAMP/htdocs/PhpProject2/application/controllers/IndexController.php on line 19</p>
+<p>où line 19 correspond à :<br>
+Zend_Debug::dump($vote-&gt;findParentApplication_Model_DbTable_Membres());</p>
+<p>public function indexAction()<br>
+    {<br>
+        $membres = new Application_Model_DbTable_Membres(); // On instancie un modèle Membres.<br>
+		$user = $membres-&gt;find(1)-&gt;current(); // On récupère le premier utilisateur.<br>
+		Zend_Debug::dump($user-&gt;findApplication_Model_DbTable_Votes()); // On cherche les votes associés à l’utilisateur<br>
+		Zend_Debug::dump($user-&gt;findApplication_Model_DbTable_Commentaires()); // On cherche les commentaires associés à l’utilisateur<br>
+		$votes = new Application_Model_DbTable_Votes();  // On instancie un modèle Votes.<br>
+		$vote = $votes-&gt;find(1)-&gt;current(); // On récupère le premier vote.<br>
+		Zend_Debug::dump($vote-&gt;findParentApplication_Model_DbTable_Membres()); // On cherche l’utilisateur qui à posté le commentaire</p>
+<p>		$bureaux = new Application_Model_DbTable_Bureaux(); // On instancie un modèle Bureaux.<br>
+		$bureau = $bureaux-&gt;find(2)-&gt;current(); // On récupère le second bureau.<br>
+		Zend_Debug::dump($bureau-&gt;findApplication_Model_DbTable_Commentaires()); // On cherche les commentaires associés au bureau.<br>
+		Zend_Debug::dump($bureau-&gt;findApplication_Model_DbTable_PhotosViaModel_DbTable_BureauxPhotos()); // On cherche les photos associées au bureau. </p>
+<p>    }</p>
+<p>je n’ai pas compris le problème, c’est pour cela que je viens à vous. Le problème est-il dans le remplissage des tables ou quoi ?</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10296">
+
+ <p class="ListUser"><strong>gérot</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10296&quot;, &quot;gérot&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10296" title="">
+
+23 mai 2012 à 7:34</a></p>
+ <span class="ListNr">44</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(22).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>quelqu’un pourrait me répondre svp</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-10362">
+
+ <p class="ListUser"><strong>Cyrille</strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;10362&quot;, &quot;Cyrille&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-10362" title="">
+
+19 mars 2013 à 5:33</a></p>
+ <span class="ListNr">45</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(23).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p>Bonjour,<br>
+Gerot, il faut remplir la base de données avec des valeurs</p>
+ 
+	 	
+
+</div></li>
+
+ <li class=" " id="comment-14143">
+
+ <p class="ListUser"><strong><a href="http://www.harmonyforyouth.org/outlet/?id=Coach+Wrist+Purse" rel="external nofollow" class="url">Edenwaf</a></strong>
+	<img style="cursor:pointer;" onclick="yus_replyTo(&quot;14143&quot;, &quot;Edenwaf&quot;)" title="Reply to this comment" alt="Reply to this comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/reply.png">
+</p>
+
+ <p class="ListDate"><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/#comment-14143" title="">
+
+10 mars 2014 à 11:51</a></p>
+ <span class="ListNr">46</span>
+ <span class="Gravatar">
+	<a href="http://www.gravatar.com/" rel="nofollow"><img style="float: right; margin-left: 10px;" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/avatar(24).php" alt=""></a>	 </span>
+	 <div class="ListContent">
+	 <p><a href="http://www.harmonyforyouth.org/outlet/?id=Coach+Outlet+Seattle" rel="nofollow">http://www.harmonyforyouth.org/outlet/?id=Coach+Outlet+Seattle</a>  There we were always qualified to focus on the scene’s main character and her sad, angry voice.Americans reside in a consumer society.  <a href="http://www.harmonyforyouth.org/outlet/?id=Coach+Purse+Factory+Outlet+Online" rel="nofollow">Coach Purse Factory Outlet Online</a>  If you are might not be averse towards little bit of advice, strive all of the Isabel Marant variety, at this moment.Marinate in olive oil, lemon, garlic and lime, skewer and char briefly for sides.  <a href="http://www.harmonyforyouth.org/outlet/?id=Leesburg+Outlets+Coach+Store" rel="nofollow">Leesburg Outlets Coach Store</a></p>
+ 
+	 	
+
+</div></li>
+
+
+</ol>
+
+
+
+
+<br>
+
+<!-- Ends CommentsList-->
+
+</div>
+
+
+
+<!-- Start Comments Form-->
+
+<div class="Form">
+<h3 id="respond">Laisser un commentaire</h3>
+
+
+
+
+<div class="FormTop"></div><form action="http://www.dator.fr/wp-comments-post.php" method="post" id="commentform">
+
+
+
+
+<p>
+
+<label for="author">
+
+<input type="text" name="author" id="author" value="" tabindex="1" class="TextField" style="width: 210px;">Nom <small>(obligatoire)</small></label>
+
+</p>
+
+		
+
+<p>
+<label for="email">
+<input type="text" name="email" id="email" value="" tabindex="2" class="TextField" style="width: 210px;">E-mail <small>(ne sera pas publié) obligatoire, </small></label>
+</p>
+
+<p>Vous voulez un avatar ? Créez vous un compte sur <a href="http://www.gravatar.com/" title="Gravatar" target="_blank">Gravatar</a></p>
+
+<p>
+
+<label for="url">
+
+<input type="text" name="url" id="url" value="" tabindex="3" class="TextField" style="width: 210px;">Site Web</label>
+
+</p>
+
+
+
+<p>Ajouter du code dans votre commentaire ? Rendez-vous sur <a href="http://pastie.textmate.org/" target="_blank">Pastie.com</a>.</p>
+<p>
+<textarea name="comment" id="comment" rows="10" tabindex="4" class="TextArea" style="width: 640px;"></textarea>
+<input type="hidden" name="comment_post_ID" value="1332" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+ 
+</p>
+
+
+
+<p>
+
+<input name="SubmitComment" type="image" class="SubmitComment" title="Post Your Comment" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/ButtonTransparent.png" alt="Post Your Comment">
+
+
+</p>
+
+    <script type="text/javascript">
+	//<![CDATA[
+    function yus_replyTo(commentID,author) {
+		var inReplyTo='@<a href="#comment-'+commentID+'">'+author+'</a>: ';
+    	var myField;
+        if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
+    		myField = document.getElementById('comment');
+    	} else {
+    		return false;
+    	}
+    	if (document.selection) {
+    		myField.focus();
+    		sel = document.selection.createRange();
+    		sel.text = inReplyTo;
+    		myField.focus();
+    	}
+    	else if (myField.selectionStart || myField.selectionStart == '0') {
+    		var startPos = myField.selectionStart;
+    		var endPos = myField.selectionEnd;
+    		var cursorPos = endPos;
+    		myField.value = myField.value.substring(0, startPos)
+    					  + inReplyTo
+    					  + myField.value.substring(endPos, myField.value.length);
+    		cursorPos += inReplyTo.length;
+    		myField.focus();
+    		myField.selectionStart = cursorPos;
+    		myField.selectionEnd = cursorPos;
+    	}
+    	else {
+    		myField.value += inReplyTo;
+    		myField.focus();
+    	}
+   	}
+	//]]>
+    </script>
+
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;">
+	<label for="subscribe">Notify me of followup comments via e-mail</label>
+	</p>
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+</div>		
+ 
+
+<!--  Side Central END -->
+</div> 
+<div class="RSS">
+	<a href="http://feeds.feedburner.com/DatorBlog">
+		<img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/rssorange.jpg" alt="Souscrire au flux RSS">
+</a>
+<p style="text-align:center;">
+
+</p><form style="text-align:center;" action="http://www.feedburner.com/fb/a/emailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://www.feedburner.com/fb/a/emailverifySubmit?feedId=1473429&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true">
+<p><input type="text" style="width:140px" value="Votre adresse email" name="email" onfocus="if(this.value==&#39;Votre adresse email&#39;){this.value=&#39;&#39;}"> <input type="hidden" value="http://feeds.feedburner.com/~e?ffid=1473429" name="url"><input type="hidden" value="Dator Blog" name="title"><input type="hidden" name="loc" value="en_US"><input type="submit" value="S&#39;abonner"></p></form><br><br>
+<a href="http://feeds.feedburner.com/DatorBlog"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/DatorBlog" height="26" width="88" style="border:0" alt=""></a>
+
+<a href="http://technorati.com/faves?sub=addfavbtn&add=http://www.dator.fr"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/btn-fave2.png" alt="Ajouter à vos favoris technorati"></a>
+<br>
+
+<a href="http://www.dator.fr/la-serie-de-tutoriaux-sur-la-creation-dune-application-avec-le-zend-framework/" style="cursor:hand"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/zend-framework-series.jpg" alt="La série de tutoriaux sur la création d&#39;une application avec le zend Framework"></a>
+<p></p>
+</div>
+<div class="sidebar">
+		<div class="left">
+			<li id="text-4" class="widget widget_text"><h3 class="widgettitle">Devenir Fan de Dator.fr</h3><br>			<div class="textwidget"><script type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/fr_FR"></script><script type="text/javascript">FB.init("22af46f1a4e342a3095288fc5e23ba0a");</script><fb:fan profile_id="92795033755" stream="" connections="" width="270" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=22af46f1a4e342a3095288fc5e23ba0a&amp;container_width=0&amp;locale=en_US&amp;profile_id=92795033755&amp;sdk=joey&amp;width=270"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f20e61771c" width="270px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:fan Facebook Social Plugin" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/saved_resource.html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></fb:fan><div style="font-size:8px; padding-left:10px"><a href="http://www.facebook.com/pages/Dator/92795033755">Dator.fr</a> sur Facebook</div></div>
+		</li><li id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widgettitle">Nuage de tags</h3><br><div><a href="http://www.dator.fr/tag/adobe/" class="tag-link-44" title="18 sujets" rel="tag" style="font-size: 10.684931506849pt;">Adobe</a>
+<a href="http://www.dator.fr/tag/air/" class="tag-link-66" title="11 sujets" rel="tag" style="font-size: 9.3424657534247pt;">AIR</a>
+<a href="http://www.dator.fr/tag/ajax/" class="tag-link-14" title="19 sujets" rel="tag" style="font-size: 10.876712328767pt;">Ajax</a>
+<a href="http://www.dator.fr/tag/blog/" class="tag-link-16" title="19 sujets" rel="tag" style="font-size: 10.876712328767pt;">Blog</a>
+<a href="http://www.dator.fr/tag/cms/" class="tag-link-277" title="8 sujets" rel="tag" style="font-size: 8.7671232876712pt;">CMS</a>
+<a href="http://www.dator.fr/tag/concours/" class="tag-link-56" title="13 sujets" rel="tag" style="font-size: 9.7260273972603pt;">Concours</a>
+<a href="http://www.dator.fr/tag/css/" class="tag-link-4" title="19 sujets" rel="tag" style="font-size: 10.876712328767pt;">CSS</a>
+<a href="http://www.dator.fr/tag/css2/" class="tag-link-33" title="5 sujets" rel="tag" style="font-size: 8.1917808219178pt;">CSS2</a>
+<a href="http://www.dator.fr/tag/drupal/" class="tag-link-88" title="12 sujets" rel="tag" style="font-size: 9.5342465753425pt;">Drupal</a>
+<a href="http://www.dator.fr/tag/decouverte/" class="tag-link-22" title="18 sujets" rel="tag" style="font-size: 10.684931506849pt;">Découverte</a>
+<a href="http://www.dator.fr/tag/electro/" class="tag-link-19" title="4 sujets" rel="tag" style="font-size: 8pt;">Electro</a>
+<a href="http://www.dator.fr/tag/facebook/" class="tag-link-132" title="7 sujets" rel="tag" style="font-size: 8.5753424657534pt;">Facebook</a>
+<a href="http://www.dator.fr/tag/firefox/" class="tag-link-53" title="10 sujets" rel="tag" style="font-size: 9.1506849315068pt;">Firefox</a>
+<a href="http://www.dator.fr/tag/flex/" class="tag-link-43" title="17 sujets" rel="tag" style="font-size: 10.493150684932pt;">Flex</a>
+<a href="http://www.dator.fr/tag/framework/" class="tag-link-28" title="15 sujets" rel="tag" style="font-size: 10.109589041096pt;">Framework</a>
+<a href="http://www.dator.fr/tag/fun/" class="tag-link-10" title="4 sujets" rel="tag" style="font-size: 8pt;">Fun</a>
+<a href="http://www.dator.fr/tag/google/" class="tag-link-41" title="11 sujets" rel="tag" style="font-size: 9.3424657534247pt;">Google</a>
+<a href="http://www.dator.fr/tag/html/" class="tag-link-5" title="31 sujets" rel="tag" style="font-size: 13.178082191781pt;">HTML</a>
+<a href="http://www.dator.fr/tag/internet-explorer/" class="tag-link-39" title="6 sujets" rel="tag" style="font-size: 8.3835616438356pt;">Internet Explorer</a>
+<a href="http://www.dator.fr/tag/javascript/" class="tag-link-13" title="77 sujets" rel="tag" style="font-size: 22pt;">Javascript</a>
+<a href="http://www.dator.fr/tag/jquery/" class="tag-link-80" title="70 sujets" rel="tag" style="font-size: 20.657534246575pt;">jQuery</a>
+<a href="http://www.dator.fr/tag/lightbox/" class="tag-link-51" title="6 sujets" rel="tag" style="font-size: 8.3835616438356pt;">Lightbox</a>
+<a href="http://www.dator.fr/tag/mootools/" class="tag-link-71" title="10 sujets" rel="tag" style="font-size: 9.1506849315068pt;">Mootools</a>
+<a href="http://www.dator.fr/tag/oriente-objet/" class="tag-link-55" title="11 sujets" rel="tag" style="font-size: 9.3424657534247pt;">Orienté Objet</a>
+<a href="http://www.dator.fr/tag/php/" class="tag-link-3" title="65 sujets" rel="tag" style="font-size: 19.698630136986pt;">PHP</a>
+<a href="http://www.dator.fr/tag/plugin/" class="tag-link-130" title="28 sujets" rel="tag" style="font-size: 12.602739726027pt;">Plugin</a>
+<a href="http://www.dator.fr/tag/plugins/" class="tag-link-42" title="21 sujets" rel="tag" style="font-size: 11.260273972603pt;">Plugins</a>
+<a href="http://www.dator.fr/tag/prototype/" class="tag-link-50" title="21 sujets" rel="tag" style="font-size: 11.260273972603pt;">Prototype</a>
+<a href="http://www.dator.fr/tag/reseaux-sociaux/" class="tag-link-58" title="5 sujets" rel="tag" style="font-size: 8.1917808219178pt;">Reseaux Sociaux</a>
+<a href="http://www.dator.fr/tag/safari/" class="tag-link-152" title="5 sujets" rel="tag" style="font-size: 8.1917808219178pt;">Safari</a>
+<a href="http://www.dator.fr/tag/screencasts/" class="tag-link-48" title="17 sujets" rel="tag" style="font-size: 10.493150684932pt;">Screencasts</a>
+<a href="http://www.dator.fr/tag/scriptaculous/" class="tag-link-52" title="10 sujets" rel="tag" style="font-size: 9.1506849315068pt;">Scriptaculous</a>
+<a href="http://www.dator.fr/tag/site-web/" class="tag-link-30" title="9 sujets" rel="tag" style="font-size: 8.958904109589pt;">Site Web</a>
+<a href="http://www.dator.fr/tag/sql/" class="tag-link-49" title="10 sujets" rel="tag" style="font-size: 9.1506849315068pt;">SQL</a>
+<a href="http://www.dator.fr/tag/symfony/" class="tag-link-153" title="8 sujets" rel="tag" style="font-size: 8.7671232876712pt;">Symfony</a>
+<a href="http://www.dator.fr/tag/tutoriel/" class="tag-link-221" title="9 sujets" rel="tag" style="font-size: 8.958904109589pt;">Tutoriel</a>
+<a href="http://www.dator.fr/tag/twitter/" class="tag-link-93" title="7 sujets" rel="tag" style="font-size: 8.5753424657534pt;">Twitter</a>
+<a href="http://www.dator.fr/tag/videos/" class="tag-link-27" title="12 sujets" rel="tag" style="font-size: 9.5342465753425pt;">Vidéos</a>
+<a href="http://www.dator.fr/tag/watchmydesk/" class="tag-link-240" title="6 sujets" rel="tag" style="font-size: 8.3835616438356pt;">Watchmydesk</a>
+<a href="http://www.dator.fr/tag/web-20/" class="tag-link-31" title="10 sujets" rel="tag" style="font-size: 9.1506849315068pt;">Web 2.0</a>
+<a href="http://www.dator.fr/tag/wordpress/" class="tag-link-46" title="24 sujets" rel="tag" style="font-size: 11.835616438356pt;">Wordpress</a>
+<a href="http://www.dator.fr/tag/xhtml/" class="tag-link-32" title="7 sujets" rel="tag" style="font-size: 8.5753424657534pt;">xHTML</a>
+<a href="http://www.dator.fr/tag/xml/" class="tag-link-37" title="5 sujets" rel="tag" style="font-size: 8.1917808219178pt;">XML</a>
+<a href="http://www.dator.fr/tag/zend/" class="tag-link-74" title="24 sujets" rel="tag" style="font-size: 11.835616438356pt;">Zend</a>
+<a href="http://www.dator.fr/tag/zend-framework/" class="tag-link-144" title="19 sujets" rel="tag" style="font-size: 10.876712328767pt;">Zend Framework</a></div>
+</li><li id="text-3" class="widget widget_text"><h3 class="widgettitle">Sponsors</h3><br>			<div class="textwidget"><a href="http://phpsolmag.org/prt/view/nos-articles.html"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/phpsolutionmag.png"><small>Télécharger gratuitement les 
+articles de PHP Solutions</small></a>
+<br>
+<a href="http://mtnconcept.com/free-tools/"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/ft-125-125.jpg"></a>
+
+<a href="http://blogmotion.fr/"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/blog-motion.jpg"></a>
+
+<a href="http://www.hellotipi.com/?pp=39_15"><img src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/15.jpg" style="border:0"></a>
+
+<script type="text/javascript" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/396"></script></div>
+		</li><br>
+<b>Warning</b>:  gzinflate() [<a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-%E2%80%93-3-creation-des-modeles-et-explication-du-mvc/function.gzinflate">function.gzinflate</a>]: data error in <b>/home/dator/www/wp-includes/http.php</b> on line <b>1787</b><br>
+<li id="rss-2" class="widget widget_rss"><h3 class="widgettitle"><a class="rsswidget" href="http://search.twitter.com/search.atom?q=+%23veille+from%3Aclementj" title="Suivez ce contenu par syndication RSS"><img style="background:orange;color:white;border:none;" width="14" height="14" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/rss.png" alt="RSS"></a> <a class="rsswidget" href="" title="">Veille</a></h3><br></li><li id="linkcat-2" class="widget widget_links"><h3 class="widgettitle">Blogoliste</h3><br>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.vincentestaujardin.fr/" title="Vincent est au jardin, paysagiste dans la région Lyonnaise." target="_blank">Vincent est au jardin</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-17" class="widget widget_links"><h3 class="widgettitle">Blogs Amis</h3><br>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.balbou-blog.info/">Balbou Blog</a></li>
+<li><a href="http://blog.damienalexandre.fr/">Damien Alexandre</a></li>
+<li><a href="http://blog.lyrixx.info/" title="Tutoriels Zend Framework, Ubuntu, Flex, PHP en français" target="_blank">LyRix Blog</a></li>
+<li><a href="http://www.mickdez.com/v1/-Blog-.html">MickDez</a></li>
+<li><a href="http://www.startupz.fr/" rel="friend met">Startupz</a></li>
+<li><a href="http://www.steaw.com/" title="Steaw Webdesign" target="_blank">Steaw</a></li>
+<li><a href="http://www.nicollet.net/" title="Go Crazy with Computers" target="_blank">Victor Nicollet</a></li>
+<li><a href="http://www.vincentestaujardin.fr/" title="Vincent est au jardin, paysagiste dans la région Lyonnaise." target="_blank">Vincent est au jardin</a></li>
+<li><a href="http://wiip.fr/" title="Astuces de développement sur le Zend Framework en français" target="_blank">Wiip</a></li>
+
+	</ul>
+</li>
+                        
+		</div>
+		<div class="right"></div>
+	</div>
+﻿  </div>
+</div>
+<!-- container END -->
+ 
+ <div class="ExtraBG">
+  <div class="Extra">
+  <div class="RecentPosts">
+   <h3>Derniers Posts</h3>
+    <ul><li><a href="http://www.dator.fr/blog-au-ralenti/" rel="bookmark" title="Permanent Link: Blog au ralenti">Blog au ralenti</a></li><li><a href="http://www.dator.fr/generer-automatiquement-des-urls-avec-pathauto-et-token/" rel="bookmark" title="Permanent Link: Générer automatiquement des URLs avec Pathauto et Token">Générer automatiquement des URLs avec Pathauto et Token</a></li><li><a href="http://www.dator.fr/mon-adresse-change-un-service-tres-utile-quand-on-demenage/" rel="bookmark" title="Permanent Link: [Coup de Pouce] Mon adresse Change, un service très utile quand on déménage ">[Coup de Pouce] Mon adresse Change, un service très utile quand on déménage </a></li><li><a href="http://www.dator.fr/drupal-ou-joomla-lequel-correspond-le-mieux-a-vos-besoin/" rel="bookmark" title="Permanent Link: Drupal ou Joomla! : lequel correspond le mieux à vos besoins?">Drupal ou Joomla! : lequel correspond le mieux à vos besoins?</a></li><li><a href="http://www.dator.fr/resultat-du-concours-de-noel-avec-le-bundle-weecast/" rel="bookmark" title="Permanent Link: Résultat du concours de Noël avec le Bundle Weecast !">Résultat du concours de Noël avec le Bundle Weecast !</a></li><li><a href="http://www.dator.fr/projet-tutore-drupal-stone/" rel="bookmark" title="Permanent Link: Projet tutoré: Drupal Stone">Projet tutoré: Drupal Stone</a></li><li><a href="http://www.dator.fr/concours-un-mega-bundle-de-noel-offert-par-weecast/" rel="bookmark" title="Permanent Link: Concours - Un méga bundle de Noël offert par Weecast">Concours - Un méga bundle de Noël offert par Weecast</a></li><li><a href="http://www.dator.fr/afficher-un-element-html-selon-la-position-du-scroll-de-la-page-avec-jquery/" rel="bookmark" title="Permanent Link: Afficher un élément HTML selon la position du scroll de la page avec jQuery">Afficher un élément HTML selon la position du scroll de la page avec jQuery</a></li><li><a href="http://www.dator.fr/le-resultat-du-concours-pour-les-invitations-google-wave/" rel="bookmark" title="Permanent Link: Le résultat du concours pour les invitations Google Wave">Le résultat du concours pour les invitations Google Wave</a></li><li><a href="http://www.dator.fr/je-serais-au-forum-php-2009-la-conference-des-developpeurs-php-mysql/" rel="bookmark" title="Permanent Link: Je serais au forum PHP 2009 - La conférence des développeurs PHP &amp; MySQL">Je serais au forum PHP 2009 - La conférence des développeurs PHP &amp; MySQL</a></li></ul>
+  </div>
+  <div class="LastComments">
+   <h3>Derniers Commentaires</h3>
+    <ul><li>Fake Kate Spade Tote:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17592" title="View the entire comment by Fake Kate Spade Tote">sentence. bring forward the influence to</a></li><li>Cheap Blank Hockey Jerseys China:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17591" title="View the entire comment by Cheap Blank Hockey Jerseys China">knowledge you indigence help during growing.</a></li><li>New Jersey Devils Jerseys China:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17590" title="View the entire comment by New Jersey Devils Jerseys China">interrogatory and the e-mail geographical point</a></li><li>Kate Spade Wallet Quilted:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17589" title="View the entire comment by Kate Spade Wallet Quilted">object inside information online and bring</a></li><li>Camo Coach Purse:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17588" title="View the entire comment by Camo Coach Purse">the classification as thinkable. My preferred</a></li><li>Kate Spade Winter 2011 Handbags:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17587" title="View the entire comment by Kate Spade Winter 2011 Handbags">new recognition salutation, sit with a</a></li><li>Vacancy In Rae Bareli Coach Factory:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17586" title="View the entire comment by Vacancy In Rae Bareli Coach Factory">present take place you the results</a></li><li>Blue And Green Striped Kate Spade Diaper Bag:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17585" title="View the entire comment by Blue And Green Striped Kate Spade Diaper Bag">ransomed for enable card game for</a></li><li>New Coach Bag:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17584" title="View the entire comment by New Coach Bag">forestall mercantilism pieces whose worth is</a></li><li>Kate Spade Handbags Orange:  <a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/#comment-17583" title="View the entire comment by Kate Spade Handbags Orange">appraised. If you course of instruction</a></li></ul>
+  </div>
+  <div class="MostCommented">
+   <h3>Les meilleurs sujets</h3>
+   <ul><li><a href="http://www.dator.fr/tutorial-creer-une-application-avec-le-zend-framework-1-preparation-de-lenvironnement-de-watchmydesk/" title="Tutorial : Créer une application avec le Zend Framework – #1 Préparation de l’environnement de WatchMyDesk">Tutorial : Créer une application avec le Zend Framework – #1 Préparation de l’environnement de WatchMyDesk</a> (996)</li><li><a href="http://www.dator.fr/vous-connecter-a-facebook-grace-a-la-librairie-javascript-mu-connect/" title="Vous connecter à Facebook grâce à la librairie Javascript MU Connect">Vous connecter à Facebook grâce à la librairie Javascript MU Connect</a> (457)</li><li><a href="http://www.dator.fr/grand-concours-de-tutoriels-avec-eyrolles-et-apprendre-php/" title="Grand concours de tutoriels avec Eyrolles et Apprendre-PHP">Grand concours de tutoriels avec Eyrolles et Apprendre-PHP</a> (356)</li><li><a href="http://www.dator.fr/ajouter-du-code-dans-les-commentaires-sur-dator-fr/" title="Ajouter du code dans les commentaires sur Dator.fr">Ajouter du code dans les commentaires sur Dator.fr</a> (346)</li><li><a href="http://www.dator.fr/episode-07-integration-du-design/" title="Tutorial : Créer une application avec le Zend Framework – #7 Intégration du design de WatchMyDesk">Tutorial : Créer une application avec le Zend Framework – #7 Intégration du design de WatchMyDesk</a> (343)</li><li><a href="http://www.dator.fr/fireunit-les-tests-unitaires-avec-javascript/" title="FireUnit, les tests unitaires avec Javascript">FireUnit, les tests unitaires avec Javascript</a> (294)</li><li><a href="http://www.dator.fr/blog-au-ralenti/" title="Blog au ralenti">Blog au ralenti</a> (214)</li><li><a href="http://www.dator.fr/concours-gagnez-15-invitations-google-wave-sur-dator-fr/" title="Concours : Gagnez 25 invitations Google Wave sur Dator.fr !">Concours : Gagnez 25 invitations Google Wave sur Dator.fr !</a> (203)</li><li><a href="http://www.dator.fr/projet-tutore-drupal-stone/" title="Projet tutoré: Drupal Stone">Projet tutoré: Drupal Stone</a> (196)</li><li><a href="http://www.dator.fr/drupal-ou-joomla-lequel-correspond-le-mieux-a-vos-besoin/" title="Drupal ou Joomla! : lequel correspond le mieux à vos besoins?">Drupal ou Joomla! : lequel correspond le mieux à vos besoins?</a> (180)</li></ul>
+  </div>
+ </div>
+</div>
+
+<div class="FooterBG">
+<div class="Footer">
+<p>Propulsé par <a href="http://www.wordpress.org/">WordPress</a> 
+</p>
+
+</div>
+</div>
+
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/6Dg4oLkBbYq.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/6Dg4oLkBbYq(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f150a35414" frameborder="0" allowtransparency="true" scrolling="no" src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/saved_resource.html" style="display: none;"></iframe></div></div></div>
+
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Tutorial   Créer une application avec le Zend Framework – #3 Création des modèles et explication du MVC   Dator Blog_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-3774237-1");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+</script>
+
+
+
+<div id="fancy_wrap"><div id="fancy_loading"><div></div></div><div id="fancy_outer"><div id="fancy_inner"><div id="fancy_bg"><div class="fancy_bg fancy_bg_n"></div><div class="fancy_bg fancy_bg_ne"></div><div class="fancy_bg fancy_bg_e"></div><div class="fancy_bg fancy_bg_se"></div><div class="fancy_bg fancy_bg_s"></div><div class="fancy_bg fancy_bg_sw"></div><div class="fancy_bg fancy_bg_w"></div><div class="fancy_bg fancy_bg_nw"></div></div><div id="fancy_nav"></div><div id="fancy_close"></div><div id="fancy_content"></div><div id="fancy_title"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td id="fancy_title_left"></td><td id="fancy_title_main"><div></div></td><td id="fancy_title_right"></td></tr></tbody></table></div></div></div></div></body></html>

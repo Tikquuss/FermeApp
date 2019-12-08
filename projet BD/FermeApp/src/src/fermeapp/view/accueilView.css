@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 15, 2019, 3:48:45 PM
+    Author     : machine
+*/
+.mainFxmlClass {
+
+}
+.text{
+    -fx-text-fill: white;
+}
+#gridIcon{
+    -fx-background-color: #2c2e2f;
+}
+.Button{
+    -fx-background-color: skyblue;
+   
+}

@@ -1,0 +1,62 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+AnchorPane{
+    -fx-background-color:#2c2e2f;
+}
+#Btn_Enregistrer:hover{
+    -fx-background-color: green;
+}
+#Btn_Ajouter:hover{
+    -fx-background-color: green;
+}
+#Btn_Supprimer:hover{
+    -fx-background-color: green;
+}
+#Btn_Modifier:hover{
+    -fx-background-color: green;
+}
+#Btn_Annuler:hover{
+    -fx-background-color: green;
+}
+#btn_Ajouter_Mal:hover{
+    -fx-background-color: green;
+}
+#btn_Ajouter_Med:hover{
+    -fx-background-color: green;
+}
+
+
+#Btn_Enregistrer{
+    -fx-background-color: skyblue;
+}
+#Btn_Ajouter{
+    -fx-background-color: skyblue;
+}
+#Btn_Supprimer{
+    -fx-background-color: skyblue;
+}
+#Btn_Modifier{
+    -fx-background-color: skyblue;
+}
+#Btn_Annuler{
+    -fx-background-color: skyblue;
+}
+#btn_Ajouter_Mal{
+    -fx-background-color: skyblue;
+}
+#btn_Ajouter_Med{
+    -fx-background-color: skyblue;
+}
+#lbl_title{
+    -fx-background-color: #035f7d;
+    /*@import "arrivage_bande_view.css";*/
+}
+.text{
+    -fx-text-fill: white;
+}

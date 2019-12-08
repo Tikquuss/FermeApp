@@ -1,0 +1,25 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#lbl_title{
+   -fx-background-color: #035f7d;
+}
+#btn_Annuler{
+    -fx-background-color: skyblue;
+}
+#btn_Enregistrer{
+    -fx-background-color: skyblue;
+}
+#btn_Annuler:hover{
+    -fx-background-color: green;
+}
+#btn_Enregistrer:hover{
+    -fx-background-color: green;
+}
+AnchorPane{
+    -fx-background-color:#2c2e2f;
+}

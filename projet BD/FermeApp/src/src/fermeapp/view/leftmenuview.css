@@ -1,0 +1,22 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+AnchorPane{
+    -fx-background-color:#4f514f;
+}
+.Button{
+    -fx-background-color:skyblue;
+}
+.Button:hover{
+    -fx-background-color:green;
+}
+.text{
+    -fx-text-fill:white;
+}
+.accueil{
+    -fx-background-color:red;
+}

@@ -1,0 +1,564 @@
+body { margin: 0; padding: 0; background: #fff; font-family:Lucida Grande,Verdana,Lucida Sans Regular,Lucida Sans Unicode,Arial,Verdana,sans-serif; color: #40454b; font-size: 12px;}
+
+
+
+a:link { text-decoration : none; color : #6F9ABC; border: 0px;} 
+
+a:active { text-decoration : underline; color : #6F9ABC; border: 0px;} 
+
+a:visited { text-decoration : none; color : #6F9ABC; border: 0px;} 
+
+a:hover { text-decoration : underline; color : #6F9ABC; border: 0px;} 
+
+
+
+
+
+img { padding: 0px; margin: 0px; border: none;}
+
+hr { border-left:0px solid #abb0b5; border-right:0px solid #abb0b5; border-top:1px dotted #abb0b5; border-bottom:0px solid #abb0b5; height : 1px;  }
+
+
+
+input { font-family: 'Verdana'; color: #6a5555; font-size: 10px; }
+
+textarea { font-family: 'Verdana'; color: #6a5555; font-size: 10px;  }
+
+select { font-family: 'Verdana'; color: #6a5555; font-size: 10px;  }
+
+
+
+h1, h2, h3 { font-family: 'Arial';}
+
+
+
+#page {background-color: white;}
+
+#header {height: 123px; background: #fff url('images/bg_header.gif') repeat-x top center;}
+
+
+
+#menu{height:36px;background: #fff url('images/bg_menu.gif') repeat-x top center;color:#ffffff;}
+
+
+
+#menu .in{float:left;margin-left:10px;margin-top:10px;}
+
+#menu .pages{float:right;margin-right:40px;margin-top:10px;}
+
+
+
+#menu li {display:inline;list-style-image:none;list-style-position:outside;list-style-type:none;padding-left:15px;}
+
+#menu li a{color:#ffffff;font-size:11px;font-weight:bold;text-decoration:none;}
+
+#menu li a:hover{color:#ffffff;font-size:11px;font-weight:bold;text-decoration:underline;}
+
+
+
+#header_title{padding-left:100px;padding-top:20px;}
+
+#header_title h1{ position: absolute;margin: 0 0 0 -987px;}
+
+#header_title span{ position: absolute;margin: 0 0 0 -9000px;}
+
+.search{width:363px;height:53px;background:url('images/searchBox.png') no-repeat center right;margin-right:100px;padding-top:40px;float:right;text-indent:10px;}
+
+
+
+#buttonsearch { padding: 0px; margin:-20px 0px 0px 330px; top: 0px; background:transparent none repeat scroll 0%; }
+
+.search input.pictoSearch { width: 20px; height: 20px; background: url('./images/loupe2.png') no-repeat;margin:5px;margin-left:50px;}
+
+.search form {margin: 0px 0px 0px 0px;}
+
+.search input { color: #6db6ff; background:transparent; font-size: 14px; font-family: 'Arial'; size:100px;}
+
+.search input.keyword { border: none; padding: 3px 0px 3px 12px; width: 320px; border: none; size:100px;} 
+
+
+
+
+
+/* Right Column */
+
+.RSS{float: right;margin-left: 21px;padding-bottom: 4px;}
+
+.sidebar { float: right; width: 293px; margin-left: 21px; padding-bottom: 4px; background: #f2f0ea url(./images/side_bottom.gif) no-repeat left bottom;}
+
+.sidebar h3 { font-size: 14px; letter-spacing: 2px; padding: 0px 0px; margin: 0px;padding-bottom:5px; padding-top:10px; border-bottom: solid 1px #6F9ABC; color:#323740;}
+
+.sidebar .left { float: left; padding: 0px 0px 15px 15px; margin-right: 11px; background:  url(./images/coin_left.gif) no-repeat left top;}
+
+.sidebar .right { float: right; width: 4px; padding: 15px 10px 15px 0px; background: url(./images/coin_right.gif) no-repeat right top;}
+
+.sidebar ul { padding: 0px; margin: 0px;}
+
+.sidebar li { padding: 2px; margin: 0px; list-style-type: none;}
+
+.sidebar .children { margin-left: 20px;}
+
+.sidebar .children li{background: url(./images/ExtraIco.png) no-repeat left top; padding-left:10px; }
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+#bgcontain { width: 100%; background: url(./images/bkg_bgcontain.png) repeat-x;} 
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+.HeaderBG { width: 100%; float: left; background: #fff url(./images/bkg_body.png) repeat-x; }
+
+.Header { width: 900px; position: relative; margin: 0 auto; padding: 32px 0px 0px 0px; height: 70px;}
+
+.Header h1 { font-size: 35px; letter-spacing: -2px; line-height: 35px; padding: 15px 0px 0px 0px; margin: 0px;}
+
+.Header h1 a { text-decoration: none; color:#6F9ABC;}
+
+.Header h1 a:visited { text-decoration: none; color:#6F9ABC;}
+
+.Header h1 a:hover { text-decoration: none; color:#6F9ABC;}
+
+
+
+.Desc { font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; letter-spacing: -1px; color:#999;}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+.TopMenu { margin: 0px; padding: 0px; position: absolute; top: 8px; left: 0px;  }
+
+.TopMenu ul { padding: 2px 0px; margin: 0px; font-size: 0px; border-left: solid 1px #76acd3;}
+
+.TopMenu li { padding: 2px 4px; margin: 0px 4px 0px 0px; list-style-type: none; display: inline; font-size: 10px; border-right: solid 1px #76acd3; font-weight: bold;}
+
+.TopMenu li a { color:#fff;}
+
+.TopMenu li a:visited { color:#fff;}
+
+.TopMenu li a:hover { color:#fff;}
+
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+/*\ IE/Win min height hack */ * html .Search  { height: 100px;} /* */ 
+
+.Search { padding-top:20px;margin-top:60px;width: 375px; background: url(./images/searchBox.png) no-repeat left top; min-height: 100px; position: absolute; top: 0px; right: 0px;}
+
+.Search  fieldset { border: none; padding: 0px; margin: 0px;}
+
+.Search  legend { text-indent: -35000px; margin: 0; padding: 0;}
+
+.Search  form { padding: 33px 33px 0px 33px; margin: 0px 0px 0px 0px;}
+
+.Search  input { color: #6db6ff; background;font-size: 14px; font-family: 'Arial'; letter-spacing: -1px; font-weight: bold; }
+
+.Search  input.search { width: 25px; height: 25px; background: url(./images/searchButton.png) no-repeat;}
+
+.Search  input.search:hover { background: url(./images/searchButton.png) no-repeat 0 -25px; }
+
+.Search  input.keyword { border: none; background: #F6F5F1 no-repeat;  width: 270px;text-indent:10px; border: none; } 
+
+.SearchCorner { position: absolute; background: #fff url(./images/searchBkgNone.png) no-repeat; width: 9px; height: 8px; margin: 0px; top: 34px; right: -9px;} 
+
+/* IE Win min height hack */ * html #buttonsearch { margin: -26px 0px 0px 291px; } /* */ 
+
+#buttonsearch { padding: 0px; margin: -25px 0px 0px 291px; top: 0px; background: none; }
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+.ContainerBG { width: 100%; float: left; padding: 20px 0px;}
+
+.Container { width: 1000px; position: relative; clear: left; margin: 0 auto;padding-top: 10px;}
+
+
+
+/* Central Column - Single Pages */
+
+.SCS { float: left; width: 510px; }
+
+.SCS h1 { font-size: 24px; line-height: 26px; letter-spacing: -1px; font-weight: normal; padding: 7px 0px; margin: 0px 0px 7px 0px; border-bottom: dashed 1px #ccc;}
+
+.SCS h2 { font-size: 20px; line-height: 22px; letter-spacing: -1px; font-weight: normal; padding: 5px 0px; margin: 0px 0px 5px 0px; }
+
+.SCS h3 { font-size: 17px; line-height: 19px; letter-spacing: -1px; font-weight: bold; padding: 5px 0px; margin: 0px 0px 5px 0px; }
+
+.SCS p { font-size: 12px; line-height: 16px;}
+
+.SCS img { padding: 1px; border: solid 1px #f0f0f0; margin: 0px 15px 15px 0px;}
+
+.SCS img a:hover{ padding: 1px; border: solid 1px #AFAFAF; margin: 0px 15px 15px 0px;}
+
+.SCS blockquote {
+background:transparent url(images/quote.png) no-repeat scroll 50px 0;
+color:#808080;
+font-family:Georgia;
+font-size:16px;
+font-style:italic;
+padding-left:40px;
+}
+
+.SCS blockquote p { padding:0 40px 15px;}
+
+.SCS ul { font-size: 11px; padding-left: 12px; }
+
+
+
+
+
+/* Central Column */
+
+.SC { float: left; width: 680px; }
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.DateHeader { background: #f0f0f0; margin-bottom: 20px; margin-top: 10px;}
+
+.DateHeader p { background:url(./images/DateHeaderIco.png) no-repeat left center; padding: 5px 0px 5px 20px; margin: 0px 0px 0px 10px; font-size: 18px; font-family: 'Helvetica'; }
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.Post {	position: relative; clear: left; width: 680px;}
+
+.Post h2 { font-size: 19px; line-height: 19px; letter-spacing: -1px; font-weight: normal; font-family: 'Arial'; padding: 0px; margin: 0px; display: block;}
+
+.Post h2 a { color: #6F9ABC; text-decoration: none;}
+
+.Post h2 a:visited { color: #6F9ABC; text-decoration: none;}
+
+.Post h2 a:hover { color: #6F9ABC; text-decoration: none;}
+
+
+
+.PostHead { padding-left: 45px; }
+
+.PostInfo { padding: 0px; margin: 0px; font-size: 11px; color: #828282;}
+
+.PostInfo em { font-style: normal;}
+
+.PostInfo em a { text-decoration: underline; color: #828282;}
+
+.PostInfo em a:visited { text-decoration: underline; color: #828282;}
+
+.PostInfo em a:hover { text-decoration: underline; color: #828282; }
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+.PostDate { position: absolute; top: 0px; left: 0; text-align: center; margin: 0; padding: 2px 10px 2px 0px; list-style: none; border-right: solid 1px #ccc;}
+
+.PostDate .month { display: block; font-size: 9px; line-height: 9px; color: #666; text-transform: uppercase;}
+
+.PostDate .day { display: block; font-size: 21px; font-family: 'Arial'; font-weight: bold; line-height: 19px; color: #ccc; letter-spacing: -1px;}
+
+
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+.PostContent { padding: 5px 0px 0px 0px;  font-size: 12px; line-height: 16px; border-top: solid 1px #ccc; margin-top: 15px;}
+
+.PostContent p { font-size: 12px; line-height: 16px;}
+
+.PostContent img { padding: 1px; border: solid 1px #f0f0f0; margin: 0px 15px 15px 0px;}
+
+.PostContent img[class="wp-smiley"] {padding:0px; border:0px; margin:0px 0px 0px 0px;}
+
+
+.PostContent blockquote {
+background:transparent url(images/quote.png) no-repeat scroll 30px 0;
+color:#808080;
+font-family:Georgia;
+font-size:16px;
+font-style:italic;
+padding-left:20px;
+}
+
+.PostContent blockquote p { padding:0 40px 15px;}
+
+.PostContent ul { font-size: 11px; }
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+.PostDetails { padding: 0px; margin: 0px; font-size: 11px; display: inline;}
+
+.PostDetails li { padding: 0px; margin: 0px; list-style-type: none; }
+
+
+
+.PostDetails .PostCom {}
+
+.PostDetails .PostCom a { padding: 0px 0px 0px 23px; background: url(./images/PostComLeft.png) no-repeat left top; float: left; text-decoration: none; font-size: 11px;}
+
+.PostDetails .PostCom a span { padding: 4px 15px 3px 5px; display: block; background: url(./images/PostComRight.png) no-repeat right top; float: left; }
+
+.PostDetails .PostCom a span { float: none;}
+
+.PostDetails .PostCom a:hover span {}
+
+.PostDetails .PostCom a:hover { background-position: 0% -23px; text-decoration: none;}
+
+.PostDetails .PostCom a:hover span { background-position: 100% -23px; }
+
+
+
+.PostDetails .Tags { background: url(./images/PostDetailsTagsIco.png) no-repeat left center; padding: 5px 0px 5px 20px; margin-left: 0px;}
+
+
+
+
+
+/* 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ */
+
+.RelatedPosts { margin: 20px 0px;}
+
+.RelatedPosts h3 { font-size: 14px; letter-spacing: -1px; background:url(images/RelatedPostsHeading.png) no-repeat left center; border-bottom: dashed 1px #87909e; padding: 5px 0px 5px 20px; margin: 0px;}
+
+.RelatedPosts ul { padding: 10px 0px 0px 0px; margin: 0px;}
+
+.RelatedPosts li { padding: 0px 0px 0px 20px; margin: 0px; list-style-type: none; background: url(images/RelatedPostsLi.png) no-repeat left top;}
+
+.RelatedPosts {}
+
+
+
+
+
+/* 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ */
+
+
+
+.Comments { padding: 0px; margin: 20px 0px 0px 0px;}
+
+.Comments .List h3 { font-size: 14px; letter-spacing: -1px; background:url(images/CommentsListHeading.png) no-repeat left center; border-bottom: dashed 1px #87909e; padding: 5px 0px 5px 20px; margin: 0px; }
+
+.Comments .List ol { padding: 10px 0px 0px 0px; margin: 0px;}
+
+.Comments .List li { position: relative; padding: 2px 0px; margin: 0px; list-style-type: none; font-size: 11px; position: relative;}
+
+
+
+/* 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ */
+
+
+
+/*\ IE/Win min height hack */ * html .Comments .List .ListNr { left: 0px;} /* */ 
+
+.Comments .List .ListNr { color:#a8bed7; position: absolute; top: 15px; font-size: 18px; line-height: 14px; font-family: "Trebuchet MS"; font-weight: normal; letter-spacing: -1px; width: 15px; height: 15px; padding: 5px; text-align: center; border: solid 1px #cee0f4; background: #eaf4ff;}
+
+
+
+.Comments .List .Gravatar { position: absolute; top: 0px;right: 0;}
+
+.Comments .List .Gravatar a:hover{ position: absolute; top: 0px;right: 0;text-decoration:underline;}
+
+
+
+.Comments .List .ListUser { margin: 0px; padding: 0px 0px 0px 35px; font-size: 14px; line-height: 14px; font-family: 'Arial'; letter-spacing: -1px;}
+
+.Comments .List .ListUser a { text-decoration: none;}
+
+.Comments .List .ListUser a:visited { text-decoration: none;}
+
+.Comments .List .ListUser a:hover { text-decoration: none;}
+
+
+
+.Comments .List .ListDate { color:#8c97a1; padding: 0px 0px 0px 35px; margin: 0px 0px 0px 0px; font-size: 10px; }
+
+.Comments .List .ListDate a { color:#8c97a1; text-decoration: none;}
+
+.Comments .List .ListDate a:visited { text-decoration: none;}
+
+.Comments .List .ListContent { color:#333; font-size: 11px; line-height: 14px;padding-top:5px; border-top: solid 1px #c5cad0; margin: 10px 0px 0px 0px;}
+
+.Comments .List .ListContent p { padding: 3px 0px; margin: 3px 0px; font-size: 11px; line-height: 14px;}
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+.Comments .Form {}
+
+.Comments .Form h3 { font-size: 14px; letter-spacing: -1px; background:url(images/CommentsFormHeading.png) no-repeat left center; border-bottom: dashed 1px #87909e; padding: 5px 0px 5px 20px; margin: 0px 0px 10px 0px;}
+
+
+
+.Comments .FormTop { background: #accbed no-repeat left top; width: 680px; height: 5px; display: block;}
+
+
+
+.Comments .Form form { padding: 20px; margin: 0px; background: #accbed no-repeat left bottom;}
+
+.Comments .Form p { padding: 3px 0px; margin: 0px; font-size: 11px; color:#000033;}
+
+.Comments .Form p label { padding-bottom: 11px; display: block;}
+
+.Comments .Form p label small { font-size: 11px; color: #000033}
+
+
+
+.Comments .Form .Note {  margin: 5px 0px; width: 395px;}
+
+.Comments .Form .Note small { font-size: 10px;}
+
+.Comments .Form .TextField { background: #fff; border: solid 1px #89afd8; padding: 5px; font-size: 11px; margin-right: 20px; color:#40454b;}
+
+.Comments .Form .TextArea { background: #fff; border: solid 1px #89afd8; padding: 5px; font-size: 11px; color:#40454b;}
+
+
+
+.Comments .Form input.SubmitComment { width: 150px; height: 26px; background: url(images/SubmitComment.png) no-repeat; margin-top: 7px;}
+
+.Comments .Form input.SubmitComment:hover { background: url(images/SubmitComment.png) no-repeat 0 -26px; }
+
+.Comments .Form input.SubmitCommentIE { width: 150px; height: 26px; background: url(images/SubmitComment.png) no-repeat 0 -26px; margin-top: 7px; }
+
+
+
+.ExtraBG { width: 100%; float: left; background: #B7AE8A; padding: 25px 0px;}
+
+.Extra { width: 900px; position: relative; clear: left; margin: 0 auto; }
+
+.Extra h3 { padding: 0px 0px 10px 0px; margin: 0px 0px 10px 0px; color:#fff; font-size: 17px; letter-spacing: -1px; border-bottom: dashed 1px #2658ad;}
+
+
+
+.Extra ul { padding: 0px; margin: 0px;}
+
+.Extra li { color:#fff; padding: 1px 0px 1px 13px; margin: 0px; list-style-type: none; font-size: 11px; background: url(images/ExtraIco.png) no-repeat left top;}
+
+.Extra li a { color:#fff; }
+
+.Extra li a:visited { color:#fff; }
+
+.Extra li a:hover { color:#fff; }
+
+
+
+.Extra .RecentPosts { width: 290px; float: left; }
+
+.Extra .LastComments { width: 290px; float: left; margin: 0px 15px;}
+
+.Extra .MostCommented { width: 290px; float: left;}
+
+
+
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+.FooterBG { width: 100%; float: left; background: #8F8662;  padding: 3px 0 0 0;}
+
+.Footer { width: 900px; position: relative; clear: left; margin: 0 auto; }
+
+.Footer p { padding: 0px 0px 10px 0px; margin: 0px 0px 10px 0px; color:#000; font-size: 11px; border-bottom: solid 1px #8D8461; display: block;}
+
+.Footer p a {color:#fff; text-decoration: underline;}
+
+
+
+.Footer ul { display: inline; padding: 0px; margin: 0px; }
+
+.Footer li { display: inline; padding: 0px; margin: 0px; list-style-type: none;}
+
+.Footer .WP { text-indent: -35000px; background: url(images/FooterWPLogo.gif) no-repeat left top; width: 71px; height: 20px; float: left;}
+
+.Footer .DD { text-indent: -35000px; background: url(images/FooterDDLogo.gif) no-repeat left top; width: 83px; height: 20px; float: left; margin-right: 10px; }
+
+
+
+
+/* Captions & aligment */
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+        text-align:center;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/* End captions & aligment */
+
+span.search-excerpt{
+	background-color: yellow;
+}

@@ -1,0 +1,61 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#btn_Enregistrer{
+  -fx-background-color: skyblue;
+  -fx-text-align: right;
+}
+#btn_Ajouter{
+  -fx-background-color: skyblue;
+}
+#btn_Supprimer{
+  -fx-background-color: skyblue;
+}
+#btn_Modifier{
+  -fx-background-color: skyblue;
+}
+#btn_Annuler{
+  -fx-background-color: skyblue;
+}
+#btn_Enregistrer:hover{
+  -fx-background-color: green;
+  -fx-color:white;
+}
+#btn_Ajouter:hover{
+ -fx-background-color: green;
+}
+#btn_Supprimer:hover{
+ -fx-background-color: green;
+}
+#btn_Modifier:hover{
+  -fx-background-color: green;
+}
+#btn_Annuler:hover{
+  -fx-background-color: green;
+}
+#nouvelle_Entree_title{
+    -fx-background-color: skyblue;
+}
+AnchorPane{
+    -fx-background-color: #404243;
+}
+#lbl_id_Entree{
+    -fx-font-size: 15px;
+}
+#lbl_Quantite{
+    -fx-font-size: 15px;
+}
+#lbl_Total_Defec{
+    -fx-font-size: 15px;
+}
+#lbl_Date{
+    -fx-font-size: 15px;
+}
+
+.JFXTextField{
+    -fx-border-color: white;
+}

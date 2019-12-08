@@ -1,0 +1,23 @@
+﻿Définir deux déclencheurs, deux procédures stockées. Pour l'exercice1.
+
+
+1. Définir deux vues
+a. une vue dont sa définition sera basé au moins sur deux tables.vue dont sa définition sera basé au moins sur 3 tables
+b. vue dont sa définition sera basé au moins sur 3 tables
+c. Créer une vue telle que les données ne sont accessible que entre 8heures et 18 heures dans la journée.
+
+2. 
+a. Ecrire un déclencheur qui associe à une opération d'insertion ou de modification.
+b. Ecrire un déclencheur qui associe à une opération de suppréssion.
+
+3. 
+a.3. Ecrire une procédure stockée telle que en lui passant deux valeurs elle me retourne une reponse.
+b. Ecrire un déclencheur de votre choix.
+
+4. Ecrire avec le langage shell associé avec le PHP un script qui permet de copier tous les contenue de votre base de donnée tous les jours à 1 heures du matin, de compressér, ensuite transferer dans une autre machine en faisant le ftp.
+
+Dans ce script shell il y aura des appels à des fichiers php.
+
+
+
+L'exercice que nous allons faire c'est l'exercice 2.

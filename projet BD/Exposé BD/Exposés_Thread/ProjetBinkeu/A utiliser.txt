@@ -1,0 +1,18 @@
+source C:\Users\serge\Desktop\BD\ProjetBinkeu\Creation.sql
+INSERT INTO etudiant VALUES('27','Tibati','tantapion','MSP',1);
+INSERT INTO etudiant VALUES('86','Ateba','Charle','electrique',4);
+DELETE FROM etudiant WHERE matricule=27;
+
+
+DROP TRIGGER histoIns;
+
+DELIMITER &
+CREATE TRIGGER histoIns BEFORE
+insert ON etudiant FOR EACH ROW
+BEGIN
+     insert into historique values(user(), current_timestamp,'Insertion',concat(new.nom,' ',new.prenom), new.dept,new.niveau);
+     IF CURRENT_TIME NOT BETWEEN 130000 AND 160000 THEN
+              insert into erreur(er) values(concat('Erreur:  Insertion non permise , appeler ','l','administrateur' ));
+    END IF;
+END &
+DELIMITER ;

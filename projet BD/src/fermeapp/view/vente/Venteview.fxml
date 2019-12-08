@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fermeapp.view.vente.VenteviewController">
+   <children>
+      <GridPane layoutX="214.0" layoutY="234.0" prefHeight="198.0" prefWidth="304.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="157.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label />
+            <JFXButton fx:id="oeufButton" onAction="#Onclick" prefHeight="101.0" prefWidth="106.0" style="-fx-background-color: #B52E58;" text="Oeufs" GridPane.rowIndex="1" />
+            <JFXButton fx:id="poulesButton" layoutX="10.0" layoutY="398.0" onAction="#Onclick" prefHeight="105.0" prefWidth="101.0" style="-fx-background-color: #B52E58;" text="Poules" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <JFXButton fx:id="poussinButton" layoutX="10.0" layoutY="398.0" onAction="#Onclick" prefHeight="93.0" prefWidth="107.0" style="-fx-background-color: #B52E58;" text="Poussins" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fitHeight="158.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/eggs_80px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="158.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@images/hatching_chicken_240px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="158.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@images/chicken_200px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

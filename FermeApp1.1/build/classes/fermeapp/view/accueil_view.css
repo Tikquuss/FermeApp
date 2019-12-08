@@ -1,0 +1,18 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+AnchorPane{
+    -fx-background-image: url("fermeapp\view\images\1024px-Coq_Belle-Ile.jpg");
+    -fx-background-color: #2c2e2f;
+}
+.text{
+    -fx-text-fill:white;
+}
+.animImage{
+    -fx-box-shadow: 5px green;
+}

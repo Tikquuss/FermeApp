@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fermeapp.view.AccueilViewController">
+   <children>
+      <GridPane layoutX="123.0" layoutY="188.0" prefHeight="579.0" prefWidth="902.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="0.0" prefWidth="136.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="995.0" minWidth="10.0" prefWidth="911.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane fx:id="leftAnchorPane" prefHeight="585.0" prefWidth="48.0" />
+            <AnchorPane id="AnchorPane" fx:id="rigthAnchorPane" prefHeight="623.0" prefWidth="861.0" styleClass="mainFxmlClass" GridPane.columnIndex="1">
+               <children>
+                  <GridPane layoutX="-3.0" layoutY="15.0" prefHeight="403.0" prefWidth="886.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="231.0" fitWidth="345.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/1024px-Coq_Belle-Ile.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets bottom="150.0" left="250.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Label text="Ferme App" textAlignment="CENTER" textFill="#16da34">
+                           <GridPane.margin>
+                              <Insets bottom="-150.0" left="350.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="Accent SF" size="26.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="395.0" prefWidth="880.0" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="57.0" layoutY="385.0" prefHeight="132.0" prefWidth="834.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ImageView fx:id="accueil_menu_personnel" fitHeight="80.0" fitWidth="100.0" onMouseClicked="#initialize" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                           <image>
+                              <Image url="@images/personnelmanager.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="-10.0" right="25.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="acceuil_menu_soins" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                           <image>
+                              <Image url="@images/logo-santé-png-1.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="acceuil_menu_stock_alimentaire" fitHeight="80.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                           <image>
+                              <Image url="@images/alimentare..png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="acceuil_menu_entree" fitHeight="80.0" fitWidth="100.0" onMouseDragEntered="#handleVente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                           <image>
+                              <Image url="@images/panier-logo-png-7.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="17.0" right="15.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label styleClass="text" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="95.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="10.0" prefWidth="163.0" styleClass="text" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="95.0" left="5.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="100.0" prefWidth="103.0" styleClass="text" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="95.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label styleClass="text" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="95.0" left="5.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label styleClass="text" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="95.0" left="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="accueil_menu_arrivage" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8">
+                           <image>
+                              <Image url="@images/arrivage.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="5.0" right="15.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label styleClass="text" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="95.0" />
+                           </padding>
+                        </Label>
+                        <Label styleClass="text" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="95.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label styleClass="text" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets bottom="95.0" />
+                           </padding>
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ImageView fx:id="accueil_menu_partenaire" fitHeight="80.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                           <image>
+                              <Image url="@images/jour_de_la_terre_icones_partenaire.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="12.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="accueil_menu_bilan" fitHeight="80.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+                           <image>
+                              <Image url="@images/bilan.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="accueil_menu_depense" fitHeight="80.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
+                           <image>
+                              <Image url="@images/dépenses.gif" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <JFXButton onAction="#handleAliment" prefHeight="63.0" prefWidth="93.0" text="Gestion du Stock Alimentaire" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <JFXButton onAction="#handleSoins" prefHeight="69.0" prefWidth="93.0" text="Gestion des Soins" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <JFXButton onAction="#handlePersonnel" prefHeight="74.0" prefWidth="91.0" text="Gestion du Personnel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXButton onAction="#handlePartenaire" prefHeight="82.0" prefWidth="91.0" text="Gestion des Partenaires" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <JFXButton onAction="#handleBilanJournalier" prefHeight="76.0" prefWidth="91.0" text="Bilan Journalier" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <JFXButton onAction="#handleArrivage" prefHeight="72.0" prefWidth="91.0" text="Gestion Arrivage" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <JFXButton onAction="#handleDepense" prefHeight="76.0" prefWidth="91.0" text="Gestion des Dépenses" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <ImageView fitHeight="75.0" fitWidth="74.0" onMouseClicked="#handleVente" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/ventes.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <JFXButton onAction="#handleEntree" prefHeight="85.0" prefWidth="91.0" text="Gestion des Entrées" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <JFXButton onAction="#handleVente" prefHeight="79.0" prefWidth="91.0" text="Gestion des Ventes" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <JFXSlider prefHeight="14.0" prefWidth="1047.0" />
+   </children>
+</AnchorPane>
