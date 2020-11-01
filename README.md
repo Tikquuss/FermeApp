@@ -1,14 +1,14 @@
 # FermeApp
-Logiciel de gestion de ferme
+Farm management software : switch to the [code](https://github.com/Tikquuss/FermeApp/tree/code) branch.
 
-# Cadre de réalisation du Projet
-Projet de fin de semestre en Projet BD, Ecole Nationale Supérieure Polytechnique de Yaounde, troisieme année Génie Informatique, Mai 2019.
+# Project implementation context
+End of semester project in "Database Project", National Advanced School of Engineering yaounde, third year Computer Engineering, May 2019.
 
-# Technologies utilisées 
+# Technologies used 
 Java, JavaFX, Hibernate, SQL.
 
-# Contributeurs 
-Tamghuo Fotsi Hartnel Kritikos : kritikostamghuo@gmail.com  
-Zeufack Patric Hermann : zeufackp@gmail.com   
-TALOM Patrick Christel : patrycktalom@yahoo.com  
-TEDONZE Nick J. : nicktedonzepo@gmail.com
+# Contributors 
+Tamghuo Fotsi Hartnel Kritikos: [hartnel](https://github.com/hartnel)
+Zeufack Patric Hermann: [zeufack](https://github.com/zeufack)
+TALOM Patrick Christel: [patricktal](https://github.com/patricktal)  
+TEDONZE Nick J.: nicktedonzepo@gmail.com
